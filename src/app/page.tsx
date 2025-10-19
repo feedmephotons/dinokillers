@@ -1,10 +1,13 @@
+import { projects, portfolioStats } from '@/data/projects';
+import ProjectCard from '@/components/ProjectCard';
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Animated background logo */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 blur-sm"
+          className="absolute inset-0 bg-cover bg-center opacity-15 blur-sm"
           style={{
             backgroundImage: 'url(/logos/dk-logo.png)',
             backgroundSize: 'cover',
@@ -12,7 +15,7 @@ export default function Home() {
           }}
         />
         {/* Gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/95" />
 
         {/* Animated grid pattern */}
         <div className="absolute inset-0 opacity-10"
@@ -25,12 +28,12 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-8">
-        <main className="max-w-7xl w-full">
-          {/* Splash screen hero section */}
-          <div className="text-center mb-20">
+      <div className="relative z-10 min-h-screen p-8 py-16">
+        <main className="max-w-[1600px] mx-auto">
+          {/* Hero section */}
+          <div className="text-center mb-16">
             <div className="mb-8 animate-fade-in">
-              <h1 className="text-8xl md:text-9xl font-black mb-6 tracking-tight">
+              <h1 className="text-7xl md:text-8xl font-black mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
                   DINO KILLERS
                 </span>
@@ -42,38 +45,58 @@ export default function Home() {
               Innovation Portfolio & Investment Deck
             </p>
 
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               Disrupting industries through cutting-edge technology and strategic execution
             </p>
+          </div>
 
-            {/* Call to action */}
-            <div className="flex gap-4 justify-center items-center">
-              <div className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-semibold text-lg hover:scale-105 transition-transform cursor-pointer">
-                Explore Portfolio
-              </div>
-              <div className="px-8 py-3 border border-cyan-500/50 rounded-lg font-semibold text-lg hover:border-cyan-500 hover:bg-cyan-500/10 transition-all cursor-pointer">
-                View Metrics
-              </div>
+          {/* Portfolio Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
+            <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
+              <div className="text-4xl font-bold text-cyan-400 mb-2">{portfolioStats.totalProjects}</div>
+              <div className="text-sm text-gray-400">Active Projects</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20">
+              <div className="text-4xl font-bold text-purple-400 mb-2">{portfolioStats.combinedTAM}</div>
+              <div className="text-sm text-gray-400">Combined TAM</div>
+            </div>
+            <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20">
+              <div className="text-4xl font-bold text-orange-400 mb-2">{portfolioStats.totalYear3Revenue}</div>
+              <div className="text-sm text-gray-400">Year 3 Revenue</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-sm rounded-xl p-6 border border-green-500/20">
+              <div className="text-4xl font-bold text-green-400 mb-2">{portfolioStats.combinedValuation.split(' ')[0]}</div>
+              <div className="text-sm text-gray-400">Est. Valuation</div>
             </div>
           </div>
 
-          {/* Preview cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-            {['HOA Hunter', 'HOA Cloud', 'Brandeezy', 'CASO Deep'].map((project, idx) => (
-              <div
-                key={project}
-                className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 hover:border-cyan-500/50 transition-all hover:scale-105 cursor-pointer group"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="h-2 w-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded mb-4 group-hover:w-full transition-all" />
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">
-                  {project}
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  Analysis pending...
-                </p>
-              </div>
+          {/* Section Header */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold text-white mb-2">Portfolio Projects</h2>
+            <p className="text-gray-400">Comprehensive analysis of each platform with market viability, technical assessment, and investment potential</p>
+          </div>
+
+          {/* Project Cards Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
+          </div>
+
+          {/* Additional Stats */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
+              <div className="text-3xl font-bold text-cyan-400 mb-2">{portfolioStats.totalLinesOfCode}</div>
+              <div className="text-sm text-gray-400">Total Lines of Production Code</div>
+            </div>
+            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
+              <div className="text-3xl font-bold text-purple-400 mb-2">{portfolioStats.averageGrossMargin}</div>
+              <div className="text-sm text-gray-400">Average Gross Margin</div>
+            </div>
+            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
+              <div className="text-3xl font-bold text-orange-400 mb-2">{portfolioStats.averageLTV_CAC}</div>
+              <div className="text-sm text-gray-400">Average LTV:CAC Ratio</div>
+            </div>
           </div>
         </main>
       </div>
@@ -81,6 +104,7 @@ export default function Home() {
       {/* Ambient glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
     </div>
   );
 }
