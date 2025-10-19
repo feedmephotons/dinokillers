@@ -23,6 +23,7 @@ export interface Project {
   description: string;
   website: string;
   logo: string; // Path to logo file
+  screenshots: string[]; // Paths to screenshot images
   metrics: ProjectMetrics;
   status: 'live' | 'beta' | 'development';
   investmentGrade: string; // e.g., "A+", "A", "A-"
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     description: 'B2B SaaS platform providing the most comprehensive database and outreach solution for targeting homeowners association (HOA) board members in Florida. Multi-channel marketing suite with AI-powered meeting intelligence.',
     website: 'hoahunter.com',
     logo: '/logos/projects/hoa-hunter-logo.svg',
+    screenshots: ['/screenshots/hoa-hunter-home.png', '/screenshots/hoa-hunter-dialer.png'],
     metrics: {
       linesOfCode: '50,475+',
       techStack: ['Next.js 15.3.5', 'PostgreSQL', 'Prisma', 'Twilio', 'Stripe'],
@@ -79,6 +81,7 @@ export const projects: Project[] = [
     description: 'Multi-tenant B2B SaaS platform providing turnkey, legally-compliant web management systems for Florida HOAs and Condos. Automates Florida Statutes 718/720 compliance with resident portal, payment processing, and AI document analysis.',
     website: 'hoacloud.app',
     logo: '/logos/projects/hoa-cloud-logo.png',
+    screenshots: ['/screenshots/hoa-cloud-landing.png', '/screenshots/hoa-cloud-dashboard.png'],
     metrics: {
       linesOfCode: '12,444',
       techStack: ['Next.js 15.3.5', 'Supabase', 'Stripe Connect', 'Anthropic Claude', 'Google Vertex AI'],
@@ -117,6 +120,7 @@ export const projects: Project[] = [
     description: 'AI-powered SaaS platform transforming logos and brand assets into professional, on-brand stock photography at scale. World\'s first conversational AI image generation platform for branded content creation.',
     website: 'brandeezy.io',
     logo: '/logos/projects/brandeezy-logo.png',
+    screenshots: ['/screenshots/brandeezy-brands.png', '/screenshots/brandeezy-generate.png'],
     metrics: {
       linesOfCode: '22,000+',
       techStack: ['Next.js 14', 'Supabase', 'Google Gemini 2.5 Flash', 'OpenAI GPT-4', 'Stripe'],
@@ -155,6 +159,7 @@ export const projects: Project[] = [
     description: 'B2B SaaS scheduling and project management platform for custom metal fabrication companies. AI transforms meeting transcriptions into automated task extraction and dynamic production planning.',
     website: 'metalcrafters.app',
     logo: '/logos/projects/metalcrafters-logo.svg',
+    screenshots: ['/screenshots/metalcrafters-dashboard.png', '/screenshots/metalcrafters-schedule.png'],
     metrics: {
       linesOfCode: '6,828 (TypeScript)',
       techStack: ['Next.js 15.4.1', 'Supabase', 'OpenAI GPT-4', 'Whisper', 'Prisma'],
@@ -193,6 +198,7 @@ export const projects: Project[] = [
     description: 'AI-powered slot game development platform automating the entire game creation pipeline from asset generation to deployment. Combines Google Gemini, OpenAI GPT-Image-1, and RunwayML for production-ready slot games in minutes.',
     website: 'N/A (Development)',
     logo: '/logos/projects/shady-luck-logo.png',
+    screenshots: ['/screenshots/shady-luck-game.png'],
     metrics: {
       linesOfCode: '22,000 (Python + JavaScript)',
       techStack: ['Python Flask', 'Google Gemini 2.5 Flash', 'OpenAI GPT-4', 'RunwayML', 'Fabric.js'],
@@ -231,6 +237,7 @@ export const projects: Project[] = [
     description: 'AI-powered task management platform for independent contractors managing 20+ clients. Natural language processing, voice-to-task conversion, and intelligent automation reduce admin overhead.',
     website: 'N/A (Development)',
     logo: '/logos/projects/taskx-logo.svg',
+    screenshots: ['/screenshots/taskx-ui.png'],
     metrics: {
       linesOfCode: '6,828 (TypeScript)',
       techStack: ['Next.js 14', 'Prisma', 'OpenAI GPT-4', 'Whisper', 'TanStack Query'],

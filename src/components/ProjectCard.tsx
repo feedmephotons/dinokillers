@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '@/data/projects';
 
 interface ProjectCardProps {
@@ -23,10 +24,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   };
 
   return (
-    <div
-      className="group relative bg-gradient-to-br from-gray-900/40 to-gray-900/20 backdrop-blur-md rounded-2xl p-8 border border-gray-800/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-[1.02] cursor-pointer overflow-hidden"
-      style={{ animationDelay: `${index * 100}ms` }}
-    >
+    <Link href={`/projects/${project.id}`}>
+      <div
+        className="group relative bg-gradient-to-br from-gray-900/40 to-gray-900/20 backdrop-blur-md rounded-2xl p-8 border border-gray-800/50 hover:border-cyan-500/50 transition-all duration-500 hover:scale-[1.02] cursor-pointer overflow-hidden"
+        style={{ animationDelay: `${index * 100}ms` }}
+      >
       {/* Glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-orange-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-orange-500/10 rounded-2xl transition-all duration-500" />
 
@@ -134,5 +136,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
