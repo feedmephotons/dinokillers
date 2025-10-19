@@ -6,11 +6,14 @@
 export interface ProjectMetrics {
   linesOfCode: string;
   techStack: string[];
+  developmentComplete: string; // % complete
+  capitalNeeded: string; // To launch
+  timeToRevenue: string; // Months to first $
   tam: string; // Total Addressable Market
-  year3Revenue: string;
-  valuation: string;
-  ltv_cac: string; // LTV:CAC Ratio
-  grossMargin: string;
+  projectedYear3ARR: string; // PROJECTED not actual
+  potentialValuation: string; // At scale, not current
+  projectedLTV_CAC: string; // Projected ratio
+  projectedGrossMargin: string;
 }
 
 export interface Project {
@@ -41,11 +44,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '50,475+',
       techStack: ['Next.js 15.3.5', 'PostgreSQL', 'Prisma', 'Twilio', 'Stripe'],
+      developmentComplete: '90%',
+      capitalNeeded: '$500K - $750K',
+      timeToRevenue: '3-4 months',
       tam: '$2B (Florida), $15B+ (National)',
-      year3Revenue: '$12.24M ARR',
-      valuation: '$97.9M - $183.6M (8-15x ARR)',
-      ltv_cac: '32.5:1',
-      grossMargin: '70%'
+      projectedYear3ARR: '$12.24M ARR',
+      potentialValuation: '$97.9M - $183.6M at scale',
+      projectedLTV_CAC: '32.5:1',
+      projectedGrossMargin: '70%'
     },
     status: 'beta',
     investmentGrade: 'A+',
@@ -76,11 +82,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '12,444',
       techStack: ['Next.js 15.3.5', 'Supabase', 'Stripe Connect', 'Anthropic Claude', 'Google Vertex AI'],
+      developmentComplete: '75%',
+      capitalNeeded: '$400K - $600K',
+      timeToRevenue: '4-6 months',
       tam: '$2B (Florida), $15B+ (National)',
-      year3Revenue: '$5.38M ARR (1,500 HOAs)',
-      valuation: '$43M - $80.7M (8-15x ARR)',
-      ltv_cac: '5-8:1',
-      grossMargin: '80-85%'
+      projectedYear3ARR: '$5.38M ARR',
+      potentialValuation: '$43M - $80.7M at scale',
+      projectedLTV_CAC: '5-8:1',
+      projectedGrossMargin: '80-85%'
     },
     status: 'development',
     investmentGrade: 'A',
@@ -111,11 +120,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '22,000+',
       techStack: ['Next.js 14', 'Supabase', 'Google Gemini 2.5 Flash', 'OpenAI GPT-4', 'Stripe'],
+      developmentComplete: '85%',
+      capitalNeeded: '$300K - $500K',
+      timeToRevenue: '2-3 months',
       tam: '$50B+ (Marketing content creation)',
-      year3Revenue: '$100M ARR (100K users @ $1K/yr)',
-      valuation: '$800M - $1.5B (8-15x ARR)',
-      ltv_cac: '17.5:1',
-      grossMargin: '80-85%'
+      projectedYear3ARR: '$100M ARR',
+      potentialValuation: '$800M - $1.5B at scale',
+      projectedLTV_CAC: '17.5:1',
+      projectedGrossMargin: '80-85%'
     },
     status: 'beta',
     investmentGrade: 'A+',
@@ -146,11 +158,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '6,828 (TypeScript)',
       techStack: ['Next.js 15.4.1', 'Supabase', 'OpenAI GPT-4', 'Whisper', 'Prisma'],
+      developmentComplete: '80%',
+      capitalNeeded: '$250K - $400K',
+      timeToRevenue: '3-5 months',
       tam: '$400-500M (Metal fabrication scheduling tools)',
-      year3Revenue: '$5.38M ARR (1,500 shops @ $799/mo avg)',
-      valuation: '$43M - $80.6M (8-15x ARR)',
-      ltv_cac: '5.7-24:1',
-      grossMargin: '85-90%'
+      projectedYear3ARR: '$5.38M ARR',
+      potentialValuation: '$43M - $80.6M at scale',
+      projectedLTV_CAC: '5.7-24:1',
+      projectedGrossMargin: '85-90%'
     },
     status: 'beta',
     investmentGrade: 'A-',
@@ -181,11 +196,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '22,000 (Python + JavaScript)',
       techStack: ['Python Flask', 'Google Gemini 2.5 Flash', 'OpenAI GPT-4', 'RunwayML', 'Fabric.js'],
+      developmentComplete: '70%',
+      capitalNeeded: '$350K - $500K',
+      timeToRevenue: '5-7 months',
       tam: '$1.29B (iGaming dev tools)',
-      year3Revenue: '$6M ARR (2,500 studios @ $2,400/yr)',
-      valuation: '$48M - $90M (8-15x ARR)',
-      ltv_cac: '5-10:1',
-      grossMargin: '80-85%'
+      projectedYear3ARR: '$6M ARR',
+      potentialValuation: '$48M - $90M at scale',
+      projectedLTV_CAC: '5-10:1',
+      projectedGrossMargin: '80-85%'
     },
     status: 'development',
     investmentGrade: 'A',
@@ -216,11 +234,14 @@ export const projects: Project[] = [
     metrics: {
       linesOfCode: '6,828 (TypeScript)',
       techStack: ['Next.js 14', 'Prisma', 'OpenAI GPT-4', 'Whisper', 'TanStack Query'],
+      developmentComplete: '65%',
+      capitalNeeded: '$200K - $350K',
+      timeToRevenue: '4-6 months',
       tam: '$2.8-4.2B (US contractors)',
-      year3Revenue: '$23M ARR (60K users @ $32/mo avg)',
-      valuation: '$184M - $345M (8-15x ARR)',
-      ltv_cac: '5-10:1',
-      grossMargin: '80-85%'
+      projectedYear3ARR: '$23M ARR',
+      potentialValuation: '$184M - $345M at scale',
+      projectedLTV_CAC: '5-10:1',
+      projectedGrossMargin: '80-85%'
     },
     status: 'development',
     investmentGrade: 'A-',
@@ -245,20 +266,25 @@ export const projects: Project[] = [
 
 /**
  * Portfolio summary statistics
+ * IMPORTANT: These are PROJECTIONS for a pre-launch venture studio portfolio
  */
 export const portfolioStats = {
   totalProjects: projects.length,
   totalLinesOfCode: '120,447+',
+  averageDevelopmentComplete: '78%',
+  totalCapitalNeeded: '$2M - $3.1M',
+  averageTimeToRevenue: '3-5 months',
   combinedTAM: '$60B+',
-  totalYear3Revenue: '$152M ARR',
-  combinedValuation: '$1.2B - $2.8B',
-  averageGrossMargin: '78%',
-  averageLTV_CAC: '13.7:1',
+  projectedTotalYear3ARR: '$152M ARR',
+  potentialCombinedValuation: '$1.2B - $2.8B at scale',
+  projectedAverageGrossMargin: '78%',
+  projectedAverageLTV_CAC: '13.7:1',
   statusBreakdown: {
     live: projects.filter(p => p.status === 'live').length,
     beta: projects.filter(p => p.status === 'beta').length,
     development: projects.filter(p => p.status === 'development').length
-  }
+  },
+  investmentThesis: 'Seeking $2-3M to launch portfolio of 6 substantially-built SaaS products. Technical risk eliminated - products are 65-90% complete. Capital will fund go-to-market, not development.'
 };
 
 /**

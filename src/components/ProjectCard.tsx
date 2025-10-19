@@ -71,20 +71,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Metrics Grid */}
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-800/30 rounded-lg p-3 border border-gray-700/30">
-            <div className="text-xs text-gray-500 mb-1">TAM</div>
-            <div className="text-sm font-bold text-cyan-400">{project.metrics.tam.split(' ')[0]}</div>
+            <div className="text-xs text-gray-500 mb-1">Dev Complete</div>
+            <div className="text-sm font-bold text-cyan-400">{project.metrics.developmentComplete}</div>
           </div>
           <div className="bg-gray-800/30 rounded-lg p-3 border border-gray-700/30">
-            <div className="text-xs text-gray-500 mb-1">Year 3 Revenue</div>
-            <div className="text-sm font-bold text-purple-400">{project.metrics.year3Revenue}</div>
+            <div className="text-xs text-gray-500 mb-1">Capital Needed</div>
+            <div className="text-sm font-bold text-purple-400">{project.metrics.capitalNeeded}</div>
           </div>
           <div className="bg-gray-800/30 rounded-lg p-3 border border-gray-700/30">
-            <div className="text-xs text-gray-500 mb-1">Valuation</div>
-            <div className="text-sm font-bold text-orange-400">{project.metrics.valuation.split(' ')[0]}</div>
+            <div className="text-xs text-gray-500 mb-1">Time to Revenue</div>
+            <div className="text-sm font-bold text-orange-400">{project.metrics.timeToRevenue}</div>
           </div>
           <div className="bg-gray-800/30 rounded-lg p-3 border border-gray-700/30">
-            <div className="text-xs text-gray-500 mb-1">LTV:CAC</div>
-            <div className="text-sm font-bold text-green-400">{project.metrics.ltv_cac}</div>
+            <div className="text-xs text-gray-500 mb-1">Proj. Year 3 ARR</div>
+            <div className="text-sm font-bold text-green-400">{project.metrics.projectedYear3ARR}</div>
           </div>
         </div>
 

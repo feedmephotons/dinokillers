@@ -42,31 +42,35 @@ export default function Home() {
             </div>
 
             <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light tracking-wide">
-              Innovation Portfolio & Investment Deck
+              Venture Studio Portfolio - Pre-Launch Investment Opportunity
             </p>
 
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              Disrupting industries through cutting-edge technology and strategic execution
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto mb-6">
+              {portfolioStats.investmentThesis}
             </p>
+
+            <div className="inline-block bg-cyan-500/10 border border-cyan-500/30 rounded-lg px-6 py-2 mb-4">
+              <span className="text-cyan-400 font-semibold">Portfolio: {portfolioStats.averageDevelopmentComplete} Average Development Complete</span>
+            </div>
           </div>
 
           {/* Portfolio Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
             <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
               <div className="text-4xl font-bold text-cyan-400 mb-2">{portfolioStats.totalProjects}</div>
-              <div className="text-sm text-gray-400">Active Projects</div>
+              <div className="text-sm text-gray-400">Products Ready to Launch</div>
             </div>
             <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20">
-              <div className="text-4xl font-bold text-purple-400 mb-2">{portfolioStats.combinedTAM}</div>
-              <div className="text-sm text-gray-400">Combined TAM</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">{portfolioStats.totalCapitalNeeded}</div>
+              <div className="text-sm text-gray-400">Total Capital Needed</div>
             </div>
             <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20">
-              <div className="text-4xl font-bold text-orange-400 mb-2">{portfolioStats.totalYear3Revenue}</div>
-              <div className="text-sm text-gray-400">Year 3 Revenue</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">{portfolioStats.projectedTotalYear3ARR}</div>
+              <div className="text-sm text-gray-400">Projected Year 3 ARR</div>
             </div>
             <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-sm rounded-xl p-6 border border-green-500/20">
-              <div className="text-4xl font-bold text-green-400 mb-2">{portfolioStats.combinedValuation.split(' ')[0]}</div>
-              <div className="text-sm text-gray-400">Est. Valuation</div>
+              <div className="text-4xl font-bold text-green-400 mb-2">{portfolioStats.potentialCombinedValuation.split(' ')[0]}</div>
+              <div className="text-sm text-gray-400">Potential Valuation</div>
             </div>
           </div>
 
@@ -84,18 +88,26 @@ export default function Home() {
           </div>
 
           {/* Additional Stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
               <div className="text-3xl font-bold text-cyan-400 mb-2">{portfolioStats.totalLinesOfCode}</div>
-              <div className="text-sm text-gray-400">Total Lines of Production Code</div>
+              <div className="text-sm text-gray-400">Lines of Production Code</div>
+              <div className="text-xs text-gray-600 mt-1">Technical de-risking complete</div>
             </div>
             <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">{portfolioStats.averageGrossMargin}</div>
-              <div className="text-sm text-gray-400">Average Gross Margin</div>
+              <div className="text-3xl font-bold text-purple-400 mb-2">{portfolioStats.averageTimeToRevenue}</div>
+              <div className="text-sm text-gray-400">Avg. Time to Revenue</div>
+              <div className="text-xs text-gray-600 mt-1">Post-funding launch timeline</div>
             </div>
             <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-              <div className="text-3xl font-bold text-orange-400 mb-2">{portfolioStats.averageLTV_CAC}</div>
-              <div className="text-sm text-gray-400">Average LTV:CAC Ratio</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">{portfolioStats.projectedAverageGrossMargin}</div>
+              <div className="text-sm text-gray-400">Projected Gross Margin</div>
+              <div className="text-xs text-gray-600 mt-1">SaaS-typical economics</div>
+            </div>
+            <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
+              <div className="text-3xl font-bold text-green-400 mb-2">{portfolioStats.projectedAverageLTV_CAC}</div>
+              <div className="text-sm text-gray-400">Projected LTV:CAC Ratio</div>
+              <div className="text-xs text-gray-600 mt-1">Based on market comps</div>
             </div>
           </div>
         </main>
