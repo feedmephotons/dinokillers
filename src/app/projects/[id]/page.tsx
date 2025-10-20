@@ -122,26 +122,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          {/* Screenshots */}
-          {project.screenshots && project.screenshots.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-white mb-6">Product Screenshots</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.screenshots.map((screenshot, index) => (
-                  <div key={index} className="rounded-xl overflow-hidden border border-gray-800/50 hover:border-cyan-500/50 transition-colors">
-                    <Image
-                      src={screenshot}
-                      alt={`${project.name} screenshot ${index + 1}`}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Two Column Layout for Details */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Left Column */}
@@ -190,29 +170,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </ul>
               </div>
 
-              {/* Risk Factors */}
-              <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20">
-                <h2 className="text-2xl font-bold text-orange-400 mb-4">Risk Factors</h2>
+              {/* Investment Impact */}
+              <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-sm rounded-xl p-6 border border-green-500/20">
+                <h2 className="text-2xl font-bold text-green-400 mb-4">Investment Impact</h2>
+                <p className="text-sm text-gray-400 mb-4">What this project achieves with proper funding and team:</p>
                 <ul className="space-y-3">
-                  {project.risks.map((risk, i) => (
+                  {project.investmentImpact.map((impact, i) => (
                     <li key={i} className="text-gray-300 flex items-start gap-3">
-                      <span className="text-orange-500 mt-1">⚠</span>
-                      <span>{risk}</span>
+                      <span className="text-green-500 mt-1 text-xl">→</span>
+                      <span>{impact}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Competitors */}
+              {/* Competitive Advantage */}
               <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50">
-                <h2 className="text-2xl font-bold text-white mb-4">Competitive Landscape</h2>
-                <div className="flex flex-wrap gap-2">
-                  {project.competitors.map((competitor, i) => (
-                    <span key={i} className="px-4 py-2 bg-gray-800/50 text-gray-400 rounded-lg border border-gray-700/50 text-sm">
-                      {competitor}
-                    </span>
-                  ))}
-                </div>
+                <h2 className="text-2xl font-bold text-white mb-4">Competitive Advantage</h2>
+                <p className="text-gray-300 leading-relaxed">{project.competitiveAdvantage}</p>
               </div>
             </div>
           </div>
