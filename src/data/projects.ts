@@ -279,19 +279,23 @@ export const portfolioStats = {
   totalProjects: projects.length,
   totalLinesOfCode: '120,447+',
   averageDevelopmentComplete: '78%',
-  totalCapitalNeeded: '$2M - $3.1M',
-  averageTimeToRevenue: '3-5 months',
+  totalCapitalNeeded: '$10M',
+  averageTimeToRevenue: '60-90 days',
   combinedTAM: '$60B+',
   projectedTotalYear3ARR: '$152M ARR',
   potentialCombinedValuation: '$1.2B - $2.8B at scale',
   projectedAverageGrossMargin: '78%',
   projectedAverageLTV_CAC: '13.7:1',
+  provenRevenue: '$18M roofing operations',
+  provenSoftwareRevenue: '$2M from HOA Hunter',
+  hoaContacts: '168,969 verified HOA board members',
+  urgencyWindow: '60-day launch window',
   statusBreakdown: {
     live: projects.filter(p => p.status === 'live').length,
     beta: projects.filter(p => p.status === 'beta').length,
     development: projects.filter(p => p.status === 'development').length
   },
-  investmentThesis: 'Seeking $2-3M to launch portfolio of 6 substantially-built SaaS products. Technical risk eliminated - products are 65-90% complete. Capital will fund go-to-market, not development.'
+  investmentThesis: 'Seeking $10M for 60-day market capture across 6 substantially-built SaaS products before competitive windows close. Not development capital - this is scaling capital for proven products with technical risk eliminated. We\'re operators who built $18M roofing business and generated $2M using our own software.'
 };
 
 /**
