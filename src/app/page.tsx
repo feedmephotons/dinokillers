@@ -34,14 +34,14 @@ export default function Home() {
           {/* Hero section */}
           <div className="text-center mb-16">
             <div className="mb-8 animate-fade-in">
-              {/* Square Logo */}
+              {/* Dino Killers Logo */}
               <div className="flex justify-center mb-8">
-                <div className="relative w-48 h-48 md:w-64 md:h-64">
+                <div className="relative w-64 h-64 md:w-80 md:h-80">
                   <Image
-                    src="/logos/dk-logo square.png"
+                    src="/logos/dk-logo-alpha.png"
                     alt="Dino Killers Logo"
-                    width={256}
-                    height={256}
+                    width={320}
+                    height={320}
                     className="w-full h-full object-contain drop-shadow-2xl"
                     priority
                   />
