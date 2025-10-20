@@ -33,27 +33,20 @@ export default function Home() {
         <main className="max-w-[1600px] mx-auto">
           {/* Hero section */}
           <div className="text-center mb-16">
-            <div className="mb-8 animate-fade-in">
+            <div className="mb-12 animate-fade-in">
               {/* Dino Killers Logo */}
-              <div className="flex justify-center mb-8">
-                <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <div className="flex justify-center">
+                <div className="relative w-80 h-80 md:w-[32rem] md:h-[32rem]">
                   <Image
                     src="/logos/dk-logo-alpha.png"
                     alt="Dino Killers Logo"
-                    width={320}
-                    height={320}
+                    width={512}
+                    height={512}
                     className="w-full h-full object-contain drop-shadow-2xl"
                     priority
                   />
                 </div>
               </div>
-
-              <h1 className="text-7xl md:text-8xl font-black mb-6 tracking-tight">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
-                  DINO KILLERS
-                </span>
-              </h1>
-              <div className="h-1 w-64 mx-auto bg-gradient-to-r from-transparent via-cyan-500 to-transparent mb-8" />
             </div>
 
             <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light tracking-wide">
