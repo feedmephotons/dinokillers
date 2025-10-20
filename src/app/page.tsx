@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { projects, portfolioStats } from '@/data/projects';
 import ProjectCard from '@/components/ProjectCard';
 
@@ -33,6 +34,20 @@ export default function Home() {
           {/* Hero section */}
           <div className="text-center mb-16">
             <div className="mb-8 animate-fade-in">
+              {/* Square Logo */}
+              <div className="flex justify-center mb-8">
+                <div className="relative w-48 h-48 md:w-64 md:h-64">
+                  <Image
+                    src="/logos/dk-logo square.png"
+                    alt="Dino Killers Logo"
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+              </div>
+
               <h1 className="text-7xl md:text-8xl font-black mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
                   DINO KILLERS
