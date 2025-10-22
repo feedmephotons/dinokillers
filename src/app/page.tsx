@@ -36,7 +36,7 @@ export default function Home() {
             <div className="mb-12 animate-fade-in">
               {/* Dino Killers Logo */}
               <div className="flex justify-center">
-                <div className="relative w-80 h-80 md:w-[32rem] md:h-[32rem]">
+                <div className="relative w-80 h-80 md:w-[32rem] md:h-[32rem] animate-float">
                   <Image
                     src="/logos/dk-logo-alpha.png"
                     alt="Dino Killers Logo"
@@ -45,44 +45,53 @@ export default function Home() {
                     className="w-full h-full object-contain drop-shadow-2xl"
                     priority
                   />
+                  {/* Glow ring around logo */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-orange-500/20 blur-3xl animate-pulse" />
                 </div>
               </div>
             </div>
 
-            <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light tracking-wide">
-              Roll-Up Acceleration Platform - $10M PE Investment Opportunity
-            </p>
+            <h1 className="text-2xl md:text-3xl mb-4 font-light tracking-wide animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <span className="gradient-text font-semibold">Roll-Up Acceleration Platform</span>
+              <span className="text-gray-300"> - $10M PE Investment Opportunity</span>
+            </h1>
 
             <p className="text-lg text-gray-500 max-w-3xl mx-auto mb-6">
               {portfolioStats.investmentThesis}
             </p>
 
             {/* Proven Revenue Callout */}
-            <div className="max-w-4xl mx-auto mb-6 bg-gradient-to-r from-green-500/20 via-green-500/10 to-green-500/20 border border-green-500/30 rounded-xl p-6">
-              <div className="text-center">
-                <div className="text-sm text-green-400 font-semibold mb-3 uppercase tracking-wide">Proven Operators, Not Just Developers</div>
+            <div className="max-w-4xl mx-auto mb-6 glass-strong rounded-xl p-6 relative overflow-hidden animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              {/* Animated gradient border effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-green-500/30 via-green-500/10 to-green-500/30 animate-gradient" />
+              <div className="absolute inset-[1px] bg-gray-900/80 rounded-xl" />
+
+              <div className="relative text-center">
+                <div className="text-sm text-green-400 font-semibold mb-3 uppercase tracking-wide animate-shimmer bg-gradient-to-r from-transparent via-green-400/40 to-transparent">
+                  Proven Operators, Not Just Developers
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <div className="text-3xl font-bold text-white mb-1">{portfolioStats.provenRevenue}</div>
+                  <div className="group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">{portfolioStats.provenRevenue}</div>
                     <div className="text-xs text-gray-400">Annual Roofing Revenue</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-green-400 mb-1">{portfolioStats.provenSoftwareRevenue}</div>
+                  <div className="group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-green-400 mb-1 group-hover:scale-110 transition-transform">{portfolioStats.provenSoftwareRevenue}</div>
                     <div className="text-xs text-gray-400">Generated Using Our Software</div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-cyan-400 mb-1">{portfolioStats.hoaContacts}</div>
+                  <div className="group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-cyan-400 mb-1 group-hover:text-green-400 transition-colors">{portfolioStats.hoaContacts}</div>
                     <div className="text-xs text-gray-400">Proprietary HOA Contacts</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-              <div className="inline-block bg-orange-500/10 border border-orange-500/30 rounded-lg px-6 py-2">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+              <div className="inline-block glass rounded-lg px-6 py-2 border border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 hover:scale-105 animate-bounce-slow">
                 <span className="text-orange-400 font-semibold">⚡ {portfolioStats.urgencyWindow} before competitive windows close</span>
               </div>
-              <div className="inline-block bg-cyan-500/10 border border-cyan-500/30 rounded-lg px-6 py-2">
+              <div className="inline-block glass rounded-lg px-6 py-2 border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 hover:scale-105">
                 <span className="text-cyan-400 font-semibold">{portfolioStats.averageDevelopmentComplete} Average Development Complete</span>
               </div>
             </div>
@@ -90,28 +99,46 @@ export default function Home() {
 
           {/* Portfolio Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 backdrop-blur-sm rounded-xl p-6 border border-cyan-500/20">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">{portfolioStats.totalProjects}</div>
-              <div className="text-sm text-gray-400">Products Ready to Launch</div>
+            <div className="group relative bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 glass rounded-xl p-6 border border-cyan-500/20 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/10 rounded-xl transition-all duration-500" />
+              <div className="relative">
+                <div className="text-4xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.totalProjects}</div>
+                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Products Ready to Launch</div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20">
-              <div className="text-4xl font-bold text-purple-400 mb-2">{portfolioStats.totalCapitalNeeded}</div>
-              <div className="text-sm text-gray-400">Total Capital Needed</div>
+            <div className="group relative bg-gradient-to-br from-purple-500/10 to-purple-500/5 glass rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="absolute inset-0 bg-purple-500/0 group-hover:bg-purple-500/10 rounded-xl transition-all duration-500" />
+              <div className="relative">
+                <div className="text-4xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.totalCapitalNeeded}</div>
+                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Total Capital Needed</div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20">
-              <div className="text-4xl font-bold text-orange-400 mb-2">{portfolioStats.projectedTotalYear3ARR}</div>
-              <div className="text-sm text-gray-400">Projected Year 3 ARR</div>
+            <div className="group relative bg-gradient-to-br from-orange-500/10 to-orange-500/5 glass rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 rounded-xl transition-all duration-500" />
+              <div className="relative">
+                <div className="text-4xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.projectedTotalYear3ARR}</div>
+                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Projected Year 3 ARR</div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur-sm rounded-xl p-6 border border-green-500/20">
-              <div className="text-4xl font-bold text-green-400 mb-2">{portfolioStats.potentialCombinedValuation.split(' ')[0]}</div>
-              <div className="text-sm text-gray-400">Potential Valuation</div>
+            <div className="group relative bg-gradient-to-br from-green-500/10 to-green-500/5 glass rounded-xl p-6 border border-green-500/20 hover:border-green-500/50 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/10 rounded-xl transition-all duration-500" />
+              <div className="relative">
+                <div className="text-4xl font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.potentialCombinedValuation.split(' ')[0]}</div>
+                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Potential Valuation</div>
+              </div>
             </div>
           </div>
 
           {/* Section Header */}
-          <div className="mb-8">
-            <h2 className="text-4xl font-bold text-white mb-2">Portfolio Projects</h2>
-            <p className="text-gray-400">Comprehensive analysis of each platform with market viability, technical assessment, and investment potential</p>
+          <div className="mb-8 text-center animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+            <h2 className="text-4xl font-bold mb-2">
+              <span className="gradient-text">Portfolio Projects</span>
+            </h2>
+            <p className="text-gray-400 max-w-3xl mx-auto">Comprehensive analysis of each platform with market viability, technical assessment, and investment potential</p>
+            {/* Decorative line */}
+            <div className="mt-4 flex justify-center">
+              <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-orange-500 rounded-full animate-gradient" />
+            </div>
           </div>
 
           {/* Project Cards Grid */}
@@ -123,34 +150,55 @@ export default function Home() {
 
           {/* Additional Stats */}
           <div className="mt-16 mb-12">
-            <h3 className="text-2xl font-bold text-white text-center mb-8">Why This is NOT Traditional Venture Capital</h3>
+            <h3 className="text-2xl font-bold text-center mb-8">
+              <span className="gradient-text">Why This is NOT Traditional Venture Capital</span>
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">{portfolioStats.totalLinesOfCode}</div>
-                <div className="text-sm text-gray-400">Lines of Production Code</div>
-                <div className="text-xs text-gray-600 mt-1">Technical risk eliminated</div>
+              <div className="group glass rounded-xl p-6 border border-gray-800/50 hover:border-cyan-500/50 text-center transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/5 rounded-xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.totalLinesOfCode}</div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Lines of Production Code</div>
+                  <div className="text-xs text-gray-600 group-hover:text-gray-500 mt-1 transition-colors">Technical risk eliminated</div>
+                </div>
               </div>
-              <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-2">{portfolioStats.averageTimeToRevenue}</div>
-                <div className="text-sm text-gray-400">Time to Market</div>
-                <div className="text-xs text-gray-600 mt-1">Launch window, not development</div>
+              <div className="group glass rounded-xl p-6 border border-gray-800/50 hover:border-purple-500/50 text-center transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className="absolute inset-0 bg-purple-500/0 group-hover:bg-purple-500/5 rounded-xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="text-3xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.averageTimeToRevenue}</div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Time to Market</div>
+                  <div className="text-xs text-gray-600 group-hover:text-gray-500 mt-1 transition-colors">Launch window, not development</div>
+                </div>
               </div>
-              <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-                <div className="text-3xl font-bold text-orange-400 mb-2">{portfolioStats.projectedAverageGrossMargin}</div>
-                <div className="text-sm text-gray-400">Projected Gross Margin</div>
-                <div className="text-xs text-gray-600 mt-1">SaaS-typical economics</div>
+              <div className="group glass rounded-xl p-6 border border-gray-800/50 hover:border-orange-500/50 text-center transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 rounded-xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="text-3xl font-bold text-orange-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.projectedAverageGrossMargin}</div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Projected Gross Margin</div>
+                  <div className="text-xs text-gray-600 group-hover:text-gray-500 mt-1 transition-colors">SaaS-typical economics</div>
+                </div>
               </div>
-              <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 text-center">
-                <div className="text-3xl font-bold text-green-400 mb-2">{portfolioStats.projectedAverageLTV_CAC}</div>
-                <div className="text-sm text-gray-400">Projected LTV:CAC Ratio</div>
-                <div className="text-xs text-gray-600 mt-1">Based on market comps</div>
+              <div className="group glass rounded-xl p-6 border border-gray-800/50 hover:border-green-500/50 text-center transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer">
+                <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 rounded-xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="text-3xl font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform duration-300">{portfolioStats.projectedAverageLTV_CAC}</div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Projected LTV:CAC Ratio</div>
+                  <div className="text-xs text-gray-600 group-hover:text-gray-500 mt-1 transition-colors">Based on market comps</div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* The Strategy */}
-          <div className="mt-12 max-w-5xl mx-auto bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20">
-            <h3 className="text-3xl font-bold text-white text-center mb-6">The Strategy: Roll-Up Acceleration Platform</h3>
+          <div className="mt-12 max-w-5xl mx-auto glass-strong rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 relative overflow-hidden group">
+            {/* Animated gradient border */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-cyan-500/10 to-orange-500/20 animate-gradient opacity-50" />
+            <div className="absolute inset-[1px] bg-gray-900/90 rounded-2xl" />
+
+            <div className="relative">
+              <h3 className="text-3xl font-bold text-center mb-6">
+                <span className="gradient-text">The Strategy: Roll-Up Acceleration Platform</span>
+              </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
               <div>
                 <div className="text-lg font-semibold text-purple-400 mb-3">Traditional PE Roll-Up:</div>
@@ -195,10 +243,11 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-400 italic">
-                &ldquo;We built the products. You build the companies. Let&apos;s move fast and capture markets before they close.&rdquo;
-              </p>
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-400 italic">
+                  &ldquo;We built the products. You build the companies. Let&apos;s move fast and capture markets before they close.&rdquo;
+                </p>
+              </div>
             </div>
           </div>
         </main>
