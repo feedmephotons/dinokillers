@@ -16,6 +16,8 @@ export interface Project {
   competitiveAdvantage: string;
   logoStr?: string; // Placeholder for icon logic
   themePrompt: string; // For GenImage
+  url?: string;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -46,6 +48,8 @@ export const projects: Project[] = [
     ],
     competitiveAdvantage: 'No other platform offers conversational editing of AI-generated branded content. Canva and Adobe lack AI branding intelligence.',
     themePrompt: 'Futuristic photography studio with robotic cameras and holographic brand logos, neon lighting, cyberpunk style',
+    url: 'https://brandeezy.io',
+    image: '/images/portfolio/brandeezy.webp'
   },
   {
     id: 'hoa-cloud',
@@ -73,6 +77,8 @@ export const projects: Project[] = [
     ],
     competitiveAdvantage: 'Generic property management tools are built for managers, not self-managed boards. None automate Florida-specific compliance.',
     themePrompt: 'Futuristic glowing digital blueprint of a gated community, data streams connecting houses, florida palm trees in neon, dark background',
+    url: 'https://hoacloud.app',
+    image: '/images/portfolio/hoa-cloud.webp'
   },
   {
     id: 'hoa-hunter',
@@ -100,6 +106,8 @@ export const projects: Project[] = [
     ],
     competitiveAdvantage: 'No platform combines HOA-specific targeting with multi-channel outreach. General B2B databases lack HOA depth.',
     themePrompt: 'Digital map of florida with glowing data nodes, sniper scope overlay, cybernetic interface, dark mode',
+    url: 'https://hoahunter.com',
+    image: '/images/portfolio/hoa-hunter.webp'
   },
   {
     id: 'metalcrafters',
@@ -127,59 +135,65 @@ export const projects: Project[] = [
     ],
     competitiveAdvantage: 'Generic tools require manual entry and lack fabrication workflows. Legacy ERP systems have terrible UX.',
     themePrompt: 'Robotic arm welding metal with sparks flying, neon sparks, dark industrial factory, holographic schematics overlay',
+    url: 'https://metalcrafters.app',
+    image: '/images/portfolio/metalcrafters.webp'
   },
   {
-    id: 'shady-luck',
-    name: 'Shady Luck',
-    tagline: 'From Concept to Casino in Under 4 Hours',
-    description: 'AI-powered slot game development platform automating the entire game creation pipeline from asset generation to deployment.',
+    id: 'buildx',
+    name: 'BuildX',
+    tagline: 'AI-First Operating System for the Trades',
+    description: 'Comprehensive operating system for trade businesses, integrating CRM, project management, and AI-driven automation for roofing and construction.',
     investmentGrade: 'A',
     developmentProgress: 70,
     capitalNeeded: '$350K - $500K',
     timeToRevenue: '5-7 months',
     projectedARR: '$6M',
-    uvp: 'Only end-to-end AI automation for slot game development. Batch generates 19 symbols + UI in one click.',
-    targetMarket: 'Indie game studios, online casino operators, social casino platforms',
-    techStack: ['Python Flask', 'Gemini 2.5 Flash', 'GPT-4', 'RunwayML', 'Fabric.js'],
+    uvp: 'Unified platform that manages every aspect of a trade business, from lead to completion, with AI assistance.',
+    targetMarket: 'Roofing contractors, general contractors, trade businesses',
+    techStack: ['Next.js 14', 'Supabase', 'OpenAI', 'Vercel'],
     highlights: [
-      'First-to-market AI-native slot game IDE',
-      '99% cost reduction',
-      '500x faster production',
-      'Direct Stake Engine SDK integration'
+      'AI-First Architecture',
+      'Role-based Workflows',
+      'Integrated CRM & PM',
+      'Automated Scheduling'
     ],
     investmentImpact: [
-      'Engineering team for auth system',
-      'QA team for AI consistency',
-      'Partnerships with casino operators'
+      'Engineering team for mobile app',
+      'Sales team for contractor acquisition',
+      'Partnerships with suppliers'
     ],
-    competitiveAdvantage: 'No other platform automates the entire slot game pipeline. Unity requires technical expertise we eliminate.',
-    themePrompt: 'Cyberpunk slot machine, glowing neon symbols, casino chips floating in zero gravity, digital glitch effects',
+    competitiveAdvantage: 'Legacy construction software is clunky and siloed. BuildX is a unified, AI-native OS.',
+    themePrompt: 'Futuristic construction site with drones, holographic blueprints, digital hardhats, neon yellow and black safety colors',
+    url: 'https://build-x2.vercel.app',
+    image: '/images/portfolio/buildx2.webp'
   },
   {
-    id: 'taskx',
-    name: 'TaskX',
-    tagline: 'AI That Understands Your Business',
-    description: 'AI-powered task management platform for independent contractors managing 20+ clients. Natural language processing and voice-to-task conversion.',
+    id: 'hailtruth',
+    name: 'HailTruth',
+    tagline: 'Stop Guessing. Know The Truth.',
+    description: 'Advanced physics-based hail damage analysis with radar timelapse, AI fraud detection, and portfolio intelligence. Federal Rule 702 compliant.',
     investmentGrade: 'A-',
     developmentProgress: 65,
     capitalNeeded: '$200K - $350K',
     timeToRevenue: '4-6 months',
     projectedARR: '$23M',
-    uvp: 'Client-centric priority weighting. Bulk AI operations like "I\'m sick today" reschedule all affected tasks intelligently.',
-    targetMarket: 'Independent contractors, consultants, freelancers, service professionals',
-    techStack: ['Next.js 14', 'Prisma', 'GPT-4', 'Whisper', 'TanStack Query'],
+    uvp: 'The only platform combining radar timelapse, fraud detection, and portfolio intelligence to validate hail claims with scientific precision.',
+    targetMarket: 'Insurance carriers, roofing contractors, forensic engineers',
+    techStack: ['Next.js 14', 'Python', 'TensorFlow', 'Mapbox'],
     highlights: [
-      'Built for multi-client consultants',
-      'Voice-first input',
-      'Revenue intelligence',
-      'Zero technical debt'
+      'Physics-based hail analysis',
+      'AI Fraud Detection',
+      'Portfolio Intelligence',
+      'Federal Rule 702 Compliant'
     ],
     investmentImpact: [
-      'Beta program validation',
-      'Marketing campaign',
-      'Mobile app development'
+      'Data science team expansion',
+      'Legal compliance framework',
+      'Enterprise sales team'
     ],
-    competitiveAdvantage: 'Generic task managers treat all tasks equally. We understand multi-client contractor needs and client importance.',
-    themePrompt: 'Holographic task list floating in air, iron man style interface, organized chaos, glowing checkmarks, futuristic office',
+    competitiveAdvantage: 'Competitors rely on simple radar swaths. We use physics-based modeling and AI to determine actual damage potential.',
+    themePrompt: 'Holographic weather map with storm cells, radar data visualization, digital hail stones, scientific interface',
+    url: 'https://hailtruth.ai',
+    image: '/images/portfolio/hailtruth.webp'
   }
 ];

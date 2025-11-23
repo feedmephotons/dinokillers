@@ -12,7 +12,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-purple/30 mb-6">
-             <span className="text-xs md:text-sm font-mono text-brand-purple">CONFIDENTIAL_FILES_UNLOCKED</span>
+            <span className="text-xs md:text-sm font-mono text-brand-purple">CONFIDENTIAL_FILES_UNLOCKED</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="text-white">ACTIVE </span>
@@ -25,21 +25,33 @@ const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div 
+            <div
               key={project.id}
               className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/50 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
             >
               {/* Top Status Bar */}
               <div className="px-6 py-4 border-b border-white/5 flex justify-between items-center bg-black/40">
                 <div className="flex items-center gap-2">
-                   <div className={`w-2 h-2 rounded-full ${project.developmentProgress > 80 ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></div>
-                   <span className="text-xs font-mono text-gray-400">{project.developmentProgress}% COMPLETE</span>
+                  <div className={`w-2 h-2 rounded-full ${project.developmentProgress > 80 ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></div>
+                  <span className="text-xs font-mono text-gray-400">{project.developmentProgress}% COMPLETE</span>
                 </div>
                 <div className="flex items-center gap-1 text-brand-purple text-xs font-bold">
                   <Star className="w-3 h-3 fill-current" />
                   {project.investmentGrade}
                 </div>
               </div>
+
+              {/* Project Image */}
+              {project.image && (
+                <div className="w-full h-48 overflow-hidden border-b border-white/5 relative group-hover:h-56 transition-all duration-300">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 to-transparent opacity-60"></div>
+                </div>
+              )}
 
               <div className="p-6">
                 <div className="mb-4">
@@ -65,7 +77,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
                   )}
                 </div>
 
-                <button 
+                <button
                   onClick={() => onSelectProject(project)}
                   className="w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-brand-cyan hover:text-brand-black text-white border border-white/10 hover:border-brand-cyan py-3 rounded-lg transition-all duration-300 font-bold text-sm group-hover:translate-y-1"
                 >
