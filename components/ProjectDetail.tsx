@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Zap, DollarSign, BarChart3, Code2, ShieldCheck, Target, Crosshair } from 'lucide-react';
+import { ArrowLeft, Zap, BarChart3, Code2, ShieldCheck, Target, Crosshair } from 'lucide-react';
 import GenImage from './GenImage';
 import { Project } from '../data/projects';
 
@@ -47,9 +47,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                 <span className="px-3 py-1 rounded bg-brand-purple/20 border border-brand-purple/50 text-brand-purple text-xs font-bold tracking-widest uppercase">
                   CLASSIFIED_PROJECT
                 </span>
-                <span className="px-3 py-1 rounded bg-green-500/20 border border-green-500/50 text-green-500 text-xs font-bold tracking-widest uppercase">
-                  GRADE {project.investmentGrade}
-                </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tighter text-white">
                 {project.name}
@@ -57,13 +54,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
               <p className="text-xl md:text-2xl text-gray-300 font-light border-l-4 border-brand-cyan pl-6 max-w-3xl">
                 {project.tagline}
               </p>
-            </div>
-
-            <div className="w-full md:w-auto">
-              <div className="p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md">
-                <div className="text-xs text-gray-400 font-mono mb-1">PROJECTED ARR</div>
-                <div className="text-3xl font-bold text-brand-cyan">{project.projectedARR}</div>
-              </div>
             </div>
           </div>
         </div>
@@ -73,7 +63,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-32 relative z-20">
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
           <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
               <BarChart3 className="w-4 h-4" /> PROGRESS
@@ -82,18 +72,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
             <div className="w-full h-1 bg-gray-700 mt-3 rounded-full overflow-hidden">
               <div className="h-full bg-brand-purple" style={{ width: `${project.developmentProgress}%` }}></div>
             </div>
-          </div>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
-              <DollarSign className="w-4 h-4" /> CAPITAL NEEDED
-            </div>
-            <div className="text-2xl font-bold text-white">{project.capitalNeeded}</div>
-          </div>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
-              <Zap className="w-4 h-4" /> TIME TO REVENUE
-            </div>
-            <div className="text-2xl font-bold text-white">{project.timeToRevenue}</div>
           </div>
           <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
@@ -129,29 +107,16 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xl font-bold text-white mb-4 text-brand-purple">Investment Impact</h4>
-                <ul className="space-y-3">
-                  {project.investmentImpact.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-400">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-white mb-4 text-brand-cyan">Key Highlights</h4>
-                <ul className="space-y-3">
-                  {project.highlights.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-400">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-cyan flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div>
+              <h4 className="text-xl font-bold text-white mb-4 text-brand-cyan">Key Highlights</h4>
+              <ul className="space-y-3">
+                {project.highlights.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-400">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-cyan flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div>

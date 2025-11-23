@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Star, Code } from 'lucide-react';
+import { ArrowRight, Zap, Code } from 'lucide-react';
 import { projects, Project } from '../data/projects';
 
 interface PortfolioProps {
@@ -34,10 +34,6 @@ const Portfolio: React.FC<PortfolioProps> = ({ onSelectProject }) => {
                 <div className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${project.developmentProgress > 80 ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></div>
                   <span className="text-xs font-mono text-gray-400">{project.developmentProgress}% COMPLETE</span>
-                </div>
-                <div className="flex items-center gap-1 text-brand-purple text-xs font-bold">
-                  <Star className="w-3 h-3 fill-current" />
-                  {project.investmentGrade}
                 </div>
               </div>
 
