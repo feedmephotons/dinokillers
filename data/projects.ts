@@ -137,3 +137,71 @@ export const projects: Project[] = [
     image: '/images/portfolio/hailtruth.webp'
   }
 ];
+
+// -----------------------------------------------------------------------------
+//  PORTFOLIO EXPANSION AREA
+// -----------------------------------------------------------------------------
+//  To add your own projects, copy the block below and paste it into the 'projects' array above,
+//  or add them to the 'additionalProjects' array below.
+//
+//  {
+//    id: 'your-project-id',
+//    name: 'Your Project Name',
+//    tagline: 'Short Punchy Tagline',
+//    description: 'Longer description of what it does...',
+//    developmentProgress: 100,
+//    uvp: 'Why is this special?',
+//    targetMarket: 'Who buys this?',
+//    techStack: ['React', 'Node.js', 'AI'],
+//    highlights: ['Feature 1', 'Feature 2'],
+//    competitiveAdvantage: 'Why you win.',
+//    themePrompt: 'Description for the AI image generator to create a background',
+//    url: 'https://your-url.com' // optional
+//  }
+// -----------------------------------------------------------------------------
+
+export const additionalProjects: Project[] = [
+  {
+    id: 'stealth-finance',
+    name: 'Stealth Finance API',
+    tagline: 'Next-Gen Fintech Infrastructure',
+    description: 'High-frequency trading algorithms driven by sentiment analysis and macro-economic data streams. Currently in private beta with select hedge funds.',
+    developmentProgress: 95,
+    uvp: 'Micro-latency execution with AI-driven risk management.',
+    targetMarket: 'Hedge Funds, FinTech Startups',
+    techStack: ['Rust', 'Python', 'TensorFlow', 'Kafka'],
+    highlights: ['Sub-millisecond latency', 'Predictive Risk Models', 'Blockchain Integration'],
+    competitiveAdvantage: 'Speed and intelligence that legacy banking APIs cannot match.',
+    themePrompt: 'Abstract visualization of high frequency trading data streams, glowing numbers, matrix style, golden financial nodes',
+  },
+  {
+    id: 'med-scribe',
+    name: 'MedScribe AI',
+    tagline: 'Automated Clinical Documentation',
+    description: 'Ambient intelligence for doctors that listens to patient consultations and automatically generates compliant medical notes in real-time.',
+    developmentProgress: 88,
+    uvp: 'Restores the doctor-patient relationship by removing the screen barrier.',
+    targetMarket: 'Private Practices, Hospital Systems',
+    techStack: ['Python', 'Whisper', 'GPT-4', 'FHIR'],
+    highlights: ['HIPAA Compliant', '99% Accuracy', 'EHR Integration'],
+    competitiveAdvantage: 'More accurate and context-aware than generic dictation tools.',
+    themePrompt: 'Clean medical interface, holographic dna strand, white and blue clinical aesthetic, doctor analyzing data',
+  },
+  {
+    id: 'urban-flow',
+    name: 'UrbanFlow',
+    tagline: 'Smart City Traffic Optimization',
+    description: 'IoT network analysis using computer vision to optimize traffic light timing and reduce congestion in mid-sized cities.',
+    developmentProgress: 70,
+    uvp: 'Reduces commute times by 20% using existing camera infrastructure.',
+    targetMarket: 'Municipalities, DOTs',
+    techStack: ['C++', 'YOLOv8', 'Edge Computing'],
+    highlights: ['Real-time adaptation', 'Emergency Vehicle Green-lighting', 'carbon emission tracking'],
+    competitiveAdvantage: 'Does not require expensive new sensors, uses existing video feeds.',
+    themePrompt: 'Aerial view of a city at night with traffic flowing like light streams, long exposure photography style, futuristic city',
+  },
+];
+
+export const getAllProjects = (): Project[] => {
+  return [...projects, ...additionalProjects];
+};

@@ -15,7 +15,12 @@ const GenImage: React.FC<GenImageProps> = ({ prompt, alt, className = "", type, 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const storageKey = `dino-img-${prompt.substring(0, 20)}`;
+  // Simple hash function for the key
+  const hash = prompt.split('').reduce((a, b) => {
+    a = ((a << 5) - a) + b.charCodeAt(0);
+    return a & a;
+  }, 0);
+  const storageKey = `dino-img-${hash}`;
 
   useEffect(() => {
     // Try to load from local storage first to save tokens/time

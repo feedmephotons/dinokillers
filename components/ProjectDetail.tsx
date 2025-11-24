@@ -1,42 +1,61 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Zap, BarChart3, Code2, ShieldCheck, Target, Crosshair } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
 import GenImage from './GenImage';
-import { Project } from '../data/projects';
+import { getAllProjects } from '../data/projects';
 
-interface ProjectDetailProps {
-  project: Project;
-  onBack: () => void;
-}
-
-const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
+const ProjectDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const project = getAllProjects().find(p => p.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
+
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-brand-black flex items-center justify-center text-white">
+        <div className="text-center">
+           <h1 className="text-4xl font-bold mb-4">404: PROJECT NOT FOUND</h1>
+           <Link to="/" className="text-brand-cyan hover:underline">Return to Base</Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-brand-black text-white animate-in fade-in duration-500">
       {/* Top Nav */}
-      <div className="fixed top-0 left-0 w-full z-50 p-4">
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-white/10 hover:bg-white/10 text-gray-300 hover:text-white transition-all"
+      <div className="fixed top-0 left-0 w-full z-50 p-4 pointer-events-none">
+        <Link
+          to="/"
+          className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-white/10 hover:bg-white/10 text-gray-300 hover:text-white transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="font-mono text-sm">RETURN_TO_BASE</span>
-        </button>
+        </Link>
       </div>
 
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-end pb-12">
         <div className="absolute inset-0 z-0">
-          <GenImage
-            type="background"
-            prompt={project.themePrompt}
-            alt={project.name}
-            className="w-full h-full"
-            overlayOpacity={0.85}
-          />
+          {project.image ? (
+            <>
+              <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${project.image})` }}
+              />
+              <div className="absolute inset-0 bg-brand-black/85"></div>
+            </>
+          ) : (
+            <GenImage
+              type="background"
+              prompt={project.themePrompt}
+              alt={project.name}
+              className="w-full h-full"
+              overlayOpacity={0.85}
+            />
+          )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent z-10"></div>
 

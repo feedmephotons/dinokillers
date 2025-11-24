@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 interface NavbarProps {
   onOpenContact: () => void;
-  onNavigateHome?: () => void; // Optional because detail view has its own back button
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onNavigateHome }) => {
+const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle scrolling to anchor if URL has hash (after navigation)
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const handleNavClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    if (onNavigateHome) {
-      onNavigateHome();
-      // Wait a tick for state update before scrolling
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+    if (location.pathname !== '/') {
+      navigate(`/#${id}`);
     } else {
       const element = document.getElementById(id);
       if (element) element.scrollIntoView({ behavior: 'smooth' });
+      // Update URL hash without jump
+      window.history.pushState(null, '', `#${id}`);
     }
     setIsOpen(false);
   };
@@ -29,9 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onNavigateHome }) => {
     <nav className="fixed w-full z-50 top-0 left-0 border-b border-white/5 bg-brand-black/80 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div 
+          <Link 
+            to="/"
             className="flex items-center gap-3 cursor-pointer"
-            onClick={() => onNavigateHome && onNavigateHome()}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className="relative group">
                <Zap className="w-8 h-8 text-brand-cyan group-hover:text-white transition-colors" />
@@ -41,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onNavigateHome }) => {
             <span className="text-2xl font-bold font-sans tracking-tighter text-white">
               DINO <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-cyan">KILLERS</span>
             </span>
-          </div>
+          </Link>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">

@@ -2,9 +2,9 @@ import { GoogleGenAI, GenerateContentResponse, Modality } from "@google/genai";
 
 // Initialize the client only when needed to ensure API key is present
 const getClient = () => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = import.meta.env.VITE_API_KEY || process.env.API_KEY; // Support both for flexibility
   if (!apiKey) {
-    console.warn("API Key not found in environment variables.");
+    console.warn("API Key not found. Please set VITE_API_KEY in your .env file.");
     return null;
   }
   return new GoogleGenAI({ apiKey });
