@@ -34,7 +34,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'No other platform offers conversational editing of AI-generated branded content. Canva and Adobe lack AI branding intelligence.',
     themePrompt: 'Futuristic photography studio with robotic cameras and holographic brand logos, neon lighting, cyberpunk style',
     url: 'https://brandeezy.io',
-    image: '/images/portfolio/brandeezy.webp'
+    image: '/images/portfolio/brandeezy-dashboard.png'
   },
   {
     id: 'hoa-cloud',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'Generic property management tools are built for managers, not self-managed boards. None automate Florida-specific compliance.',
     themePrompt: 'Futuristic glowing digital blueprint of a gated community, data streams connecting houses, florida palm trees in neon, dark background',
     url: 'https://hoacloud.app',
-    image: '/images/portfolio/hoa-cloud.webp'
+    image: '/images/portfolio/hoacloud-dashboard.png'
   },
   {
     id: 'hoa-hunter',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'No platform combines HOA-specific targeting with multi-channel outreach. General B2B databases lack HOA depth.',
     themePrompt: 'Digital map of florida with glowing data nodes, sniper scope overlay, cybernetic interface, dark mode',
     url: 'https://hoahunter.com',
-    image: '/images/portfolio/hoa-hunter.webp'
+    image: '/images/portfolio/hoahunter-dashboard.png'
   },
   {
     id: 'metalcrafters',
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'Generic tools require manual entry and lack fabrication workflows. Legacy ERP systems have terrible UX.',
     themePrompt: 'Robotic arm welding metal with sparks flying, neon sparks, dark industrial factory, holographic schematics overlay',
     url: 'https://metalcrafters.app',
-    image: '/images/portfolio/metalcrafters.webp'
+    image: '/images/portfolio/metalcrafters-dashboard.png'
   },
   {
     id: 'buildx',
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'Legacy construction software is clunky and siloed. BuildX is a unified, AI-native OS.',
     themePrompt: 'Futuristic construction site with drones, holographic blueprints, digital hardhats, neon yellow and black safety colors',
     url: 'https://build-x2.vercel.app',
-    image: '/images/portfolio/buildx2.webp'
+    image: '/images/portfolio/buildx-dashboard.png'
   },
   {
     id: 'hailtruth',
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     competitiveAdvantage: 'Competitors rely on simple radar swaths. We use physics-based modeling and AI to determine actual damage potential.',
     themePrompt: 'Holographic weather map with storm cells, radar data visualization, digital hail stones, scientific interface',
     url: 'https://hailtruth.ai',
-    image: '/images/portfolio/hailtruth.webp'
+    image: '/images/portfolio/hailtruth-dashboard.png'
   }
 ];
 
