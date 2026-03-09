@@ -32,9 +32,10 @@ const Portfolio: React.FC = () => {
               {/* Top Status Bar */}
               <div className="px-6 py-4 border-b border-white/5 flex justify-between items-center bg-black/40 relative z-20">
                 <div className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full ${project.developmentProgress > 80 ? 'bg-green-500' : 'bg-yellow-500'} animate-pulse`}></div>
-                  <span className="text-xs font-mono text-gray-400">{project.developmentProgress}% COMPLETE</span>
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <span className="text-xs font-mono text-gray-400">{project.category === 'product' ? 'PRODUCT' : 'CLIENT'}</span>
                 </div>
+                <span className="text-xs font-mono text-gray-500">{project.industry}</span>
               </div>
 
               {/* Project Image */}

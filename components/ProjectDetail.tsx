@@ -75,21 +75,24 @@ const ProjectDetail: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-32 relative z-20">
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
           <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
-              <BarChart3 className="w-4 h-4" /> PROGRESS
+              <BarChart3 className="w-4 h-4" /> CATEGORY
             </div>
-            <div className="text-2xl font-bold text-white">{project.developmentProgress}%</div>
-            <div className="w-full h-1 bg-gray-700 mt-3 rounded-full overflow-hidden">
-              <div className="h-full bg-brand-purple" style={{ width: `${project.developmentProgress}%` }}></div>
-            </div>
+            <div className="text-2xl font-bold text-white">{project.category === 'product' ? 'Product' : 'Client Work'}</div>
           </div>
           <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
               <Code2 className="w-4 h-4" /> CORE STACK
             </div>
             <div className="text-lg font-bold text-white truncate">{project.techStack[0]}</div>
+          </div>
+          <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
+            <div className="flex items-center gap-2 text-gray-400 text-sm mb-2 font-mono">
+              <Target className="w-4 h-4" /> INDUSTRY
+            </div>
+            <div className="text-lg font-bold text-white truncate">{project.industry}</div>
           </div>
         </div>
 
@@ -132,9 +135,9 @@ const ProjectDetail: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Competitive Advantage</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Impact</h3>
               <p className="text-gray-400 border-l-2 border-white/20 pl-4">
-                {project.competitiveAdvantage}
+                {project.impactStatement}
               </p>
             </div>
           </div>
