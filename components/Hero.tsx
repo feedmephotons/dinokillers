@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Terminal } from 'lucide-react';
-import GenImage from './GenImage';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -9,15 +8,11 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* AI Generated Background */}
-      <div className="absolute inset-0 z-0">
-        <GenImage 
-          type="background"
-          prompt="Abstract cyberpunk digital rain with meteor shower, dark purple and cyan neon lighting, high contrast, 8k, detailed texture, dark void background"
-          alt="Hero Background"
-          className="w-full h-full"
-          overlayOpacity={0.85}
-        />
+      {/* Gradient Mesh Background */}
+      <div className="absolute inset-0 z-0 bg-brand-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 via-transparent to-brand-cyan/10"></div>
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-purple/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[120px]"></div>
       </div>
 
       {/* Grid Overlay */}

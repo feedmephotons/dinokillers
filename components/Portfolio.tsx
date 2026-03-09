@@ -2,7 +2,6 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getAllProjects } from '../data/projects';
-import GenImage from './GenImage';
 
 const Portfolio: React.FC = () => {
   const allProjects = getAllProjects();
@@ -50,13 +49,7 @@ const Portfolio: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 to-transparent opacity-60"></div>
                   </>
                 ) : (
-                   <GenImage 
-                      type="background" 
-                      prompt={project.themePrompt} 
-                      alt={project.name}
-                      className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                      overlayOpacity={0.4}
-                   />
+                  <div className="w-full h-full bg-gradient-to-br from-brand-purple/30 to-brand-cyan/20"></div>
                 )}
               </div>
 

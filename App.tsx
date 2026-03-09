@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Mission from './components/Mission';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
-import AgentChat from './components/AgentChat';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import ProjectDetail from './components/ProjectDetail';
@@ -28,7 +27,6 @@ const App: React.FC = () => {
               <Portfolio />
               <Mission />
               <Services />
-              <AgentChat />
             </div>
             <Footer onOpenContact={handleOpenContact} />
           </main>

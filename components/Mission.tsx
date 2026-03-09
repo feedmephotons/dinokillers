@@ -1,6 +1,5 @@
 import React from 'react';
-import { Target, Flame, Activity } from 'lucide-react';
-import GenImage from './GenImage';
+import { Target, Flame } from 'lucide-react';
 
 const Mission: React.FC = () => {
   return (
@@ -11,18 +10,7 @@ const Mission: React.FC = () => {
           <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-gradient-to-r from-brand-purple to-brand-cyan rounded-2xl blur-lg opacity-30"></div>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <GenImage 
-                type="img"
-                prompt="Cinematic wide shot of a neon glowing meteor striking a dusty old computer mainframe server room, purple and cyan explosion particles, dramatic lighting, hyperrealistic, 8k, cyberpunk style"
-                alt="The Extinction Event"
-                className="aspect-[4/3] w-full object-cover"
-              />
-              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
-                <div className="flex items-center gap-2 text-xs font-mono text-brand-cyan">
-                  <Activity className="w-4 h-4" />
-                  <span>SIMULATION: IMPACT_CONFIRMED</span>
-                </div>
-              </div>
+              <div className="aspect-[4/3] w-full bg-gradient-to-br from-brand-purple/30 to-brand-cyan/20"></div>
             </div>
           </div>
 

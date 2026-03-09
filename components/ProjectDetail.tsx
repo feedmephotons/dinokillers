@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Zap, BarChart3, Code2, ShieldCheck, Target, Crosshair } from 'lucide-react';
 import { useParams, Link } from 'react-router-dom';
-import GenImage from './GenImage';
 import { getAllProjects } from '../data/projects';
 
 const ProjectDetail: React.FC = () => {
@@ -41,20 +40,14 @@ const ProjectDetail: React.FC = () => {
         <div className="absolute inset-0 z-0">
           {project.image ? (
             <>
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${project.image})` }}
               />
               <div className="absolute inset-0 bg-brand-black/85"></div>
             </>
           ) : (
-            <GenImage
-              type="background"
-              prompt={project.themePrompt}
-              alt={project.name}
-              className="w-full h-full"
-              overlayOpacity={0.85}
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/30 to-brand-cyan/20"></div>
           )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent z-10"></div>
