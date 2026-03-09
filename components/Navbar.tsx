@@ -1,75 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-interface NavbarProps {
-  onOpenContact: () => void;
-}
+const navItems = [
+  { label: 'About', path: '/about' },
+  { label: 'Services', path: '/services' },
+  { label: 'Work', path: '/portfolio' },
+  { label: 'Blog', path: '/blog' },
+];
 
-const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
-  // Handle scrolling to anchor if URL has hash (after navigation)
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, [location]);
-
-  const handleNavClick = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate(`/#${id}`);
-    } else {
-      const element = document.getElementById(id);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
-      // Update URL hash without jump
-      window.history.pushState(null, '', `#${id}`);
-    }
-    setIsOpen(false);
-  };
+  const isActive = (path: string) => location.pathname === path || location.pathname.startsWith(path + '/');
 
   return (
     <nav className="fixed w-full z-50 top-0 left-0 border-b border-white/5 bg-brand-black/80 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link 
-            to="/"
-            className="flex items-center gap-3 cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
+          <Link to="/" className="flex items-center gap-3">
             <div className="relative group">
-               <Zap className="w-8 h-8 text-brand-cyan group-hover:text-white transition-colors" />
-               <div className="absolute inset-0 blur-sm bg-brand-cyan/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <Zap className="w-8 h-8 text-brand-cyan group-hover:text-white transition-colors" />
+              <div className="absolute inset-0 blur-sm bg-brand-cyan/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
-            
             <span className="text-2xl font-bold font-sans tracking-tighter text-white">
               DINO <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-cyan">KILLERS</span>
             </span>
           </Link>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="hover:text-brand-cyan transition-colors px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
-              <a href="#mission" onClick={(e) => handleNavClick(e, 'mission')} className="hover:text-brand-cyan transition-colors px-3 py-2 rounded-md text-sm font-medium">Mission</a>
-              <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="hover:text-brand-purple transition-colors px-3 py-2 rounded-md text-sm font-medium">Arsenal</a>
-              <a href="#agent" onClick={(e) => handleNavClick(e, 'agent')} className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium text-gray-400">Consult Agent</a>
-              <button 
-                onClick={onOpenContact}
-                className="bg-white text-black hover:bg-brand-cyan hover:text-white transition-all duration-300 px-4 py-2 rounded-full font-bold text-sm"
+
+          <div className="hidden md:flex items-baseline space-x-8">
+            {navItems.map(item => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive(item.path) ? 'text-brand-cyan' : 'text-gray-300 hover:text-white'
+                }`}
               >
-                Launch Project
-              </button>
-            </div>
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              className="bg-white text-black hover:bg-brand-cyan hover:text-white transition-all duration-300 px-5 py-2 rounded-full font-bold text-sm"
+            >
+              Get Started
+            </Link>
           </div>
-          
+
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -84,16 +63,25 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       {isOpen && (
         <div className="md:hidden glass-panel border-t border-white/10">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-            <a href="#mission" onClick={(e) => handleNavClick(e, 'mission')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Mission</a>
-            <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Arsenal</a>
-            <a href="#agent" onClick={(e) => handleNavClick(e, 'agent')} className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Consult Agent</a>
-            <button 
-              onClick={() => { setIsOpen(false); onOpenContact(); }}
-              className="text-brand-cyan hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+            {navItems.map(item => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive(item.path) ? 'text-brand-cyan' : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2 rounded-md text-base font-bold text-brand-cyan hover:text-white"
             >
-              Launch Project
-            </button>
+              Get Started
+            </Link>
           </div>
         </div>
       )}
