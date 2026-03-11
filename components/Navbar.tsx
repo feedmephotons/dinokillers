@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
@@ -20,10 +20,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <div className="relative group">
-              <Zap className="w-8 h-8 text-brand-cyan group-hover:text-white transition-colors" />
-              <div className="absolute inset-0 blur-sm bg-brand-cyan/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
+            <img src="/images/dk-logo.png" alt="Dino Killers" className="w-10 h-10 object-contain" />
             <span className="text-2xl font-bold font-sans tracking-tighter text-white">
               DINO <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-cyan">KILLERS</span>
             </span>
