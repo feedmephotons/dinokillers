@@ -12,9 +12,74 @@ export interface Project {
   url?: string;
   image?: string;
   industry: string;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
+  // ─── Featured / Flagship Products ───
+  {
+    id: 'slotica',
+    name: 'Slotica',
+    tagline: 'The custom slot game factory',
+    description: 'AI-powered slot game creation platform with 23 specialized IDE pages for total creative control. From symbol design to animation timelines to sound mixing — build casino-quality slot games in any theme with AI assistance or full manual control.',
+    category: 'product',
+    featured: true,
+    uvp: 'One prompt, complete game. Pit Boss AI generates every asset, configures mechanics, and assembles a playable slot game through natural conversation.',
+    targetMarket: 'iGaming studios, casino operators, indie game developers, sweepstakes platforms',
+    techStack: ['Svelte', 'Turbo Monorepo', 'Gemini AI', 'GPT Image', 'GSAP', 'Playwright'],
+    highlights: [
+      '23 specialized IDE pages for total creative control',
+      'Pit Boss AI — describe your game, get a playable result',
+      'Symbol editor with AI background removal',
+      'Visual rig layout editor, GSAP animation timelines, audio mixer'
+    ],
+    impactStatement: 'Compresses months of slot game development into days.',
+    url: 'https://slotica.io',
+    image: '/images/portfolio/slotica-dashboard.png',
+    industry: 'Gaming & iGaming'
+  },
+  {
+    id: 'hoa-cloud',
+    name: 'HOA Cloud',
+    tagline: 'Florida HOA compliance on autopilot',
+    description: 'Multi-tenant platform that gives self-managed HOAs and condos in Florida a turnkey, legally-compliant web management system. Automates the headache of Statutes 718 and 720 so board members can stop worrying about what they might be missing.',
+    category: 'product',
+    featured: true,
+    uvp: 'The only platform purpose-built for Florida HOA and condo compliance. Saves volunteer board members hours of legal guesswork every month.',
+    targetMarket: 'Self-managed HOAs, board-managed associations, property management companies',
+    techStack: ['Next.js', 'Supabase', 'Stripe Connect', 'Claude AI'],
+    highlights: [
+      'Built specifically for Florida Statutes 718/720',
+      'AI-powered document analysis for governing documents',
+      'Multi-tenant architecture serving multiple associations',
+      'Automated compliance tracking and deadline alerts'
+    ],
+    impactStatement: 'Turns volunteer board members into compliance-confident managers without the legal bills.',
+    url: 'https://hoacloud.app',
+    image: '/images/portfolio/hoacloud-dashboard.png',
+    industry: 'Property Management'
+  },
+  {
+    id: 'dinoclaw',
+    name: 'DinoClaw',
+    tagline: 'AI-agent powered CRM/ERP platform',
+    description: 'Full-stack business operating system with AI agents baked into every workflow. CRM, project management, invoicing, HR, and business intelligence — all driven by conversational AI that understands your business context.',
+    category: 'product',
+    featured: true,
+    uvp: 'Not just AI-assisted — AI-agent driven. Every module has an embedded agent that learns your workflows and takes action autonomously.',
+    targetMarket: 'SMBs, trade contractors, service businesses, agencies',
+    techStack: ['Next.js', 'Supabase', 'Drizzle ORM', 'Claude AI', 'AWS', 'Playwright'],
+    highlights: [
+      'AI agents embedded in every business module',
+      'CRM, invoicing, HR, and BI in one platform',
+      'Voice-first interface for field crews',
+      'White-label ready for vertical SaaS deployment'
+    ],
+    impactStatement: 'Replaces an entire software stack with one AI-native platform.',
+    url: 'https://dinoclaw.app',
+    image: '/images/portfolio/dinoclaw-dashboard.png',
+    industry: 'Business Operations'
+  },
   // ─── Products ───
   {
     id: 'caso-comply',
@@ -77,46 +142,6 @@ export const projects: Project[] = [
     industry: 'Document Management'
   },
   {
-    id: 'slotica',
-    name: 'Slotica',
-    tagline: 'The custom slot game factory',
-    description: 'AI-powered slot game creation platform with 23 specialized IDE pages for total creative control. From symbol design to animation timelines to sound mixing — build casino-quality slot games in any theme with AI assistance or full manual control.',
-    category: 'product',
-    uvp: 'One prompt, complete game. Pit Boss AI generates every asset, configures mechanics, and assembles a playable slot game through natural conversation.',
-    targetMarket: 'iGaming studios, casino operators, indie game developers, sweepstakes platforms',
-    techStack: ['Svelte', 'Turbo Monorepo', 'Gemini AI', 'GPT Image', 'GSAP', 'Playwright'],
-    highlights: [
-      '23 specialized IDE pages for total creative control',
-      'Pit Boss AI — describe your game, get a playable result',
-      'Symbol editor with AI background removal',
-      'Visual rig layout editor, GSAP animation timelines, audio mixer'
-    ],
-    impactStatement: 'Compresses months of slot game development into days.',
-    url: 'https://slotica.io',
-    image: '/images/portfolio/slotica-dashboard.png',
-    industry: 'Gaming & iGaming'
-  },
-  {
-    id: 'dinoclaw',
-    name: 'DinoClaw',
-    tagline: 'AI-agent powered CRM/ERP platform',
-    description: 'Full-stack business operating system with AI agents baked into every workflow. CRM, project management, invoicing, HR, and business intelligence — all driven by conversational AI that understands your business context.',
-    category: 'product',
-    uvp: 'Not just AI-assisted — AI-agent driven. Every module has an embedded agent that learns your workflows and takes action autonomously.',
-    targetMarket: 'SMBs, trade contractors, service businesses, agencies',
-    techStack: ['Next.js', 'Supabase', 'Drizzle ORM', 'Claude AI', 'AWS', 'Playwright'],
-    highlights: [
-      'AI agents embedded in every business module',
-      'CRM, invoicing, HR, and BI in one platform',
-      'Voice-first interface for field crews',
-      'White-label ready for vertical SaaS deployment'
-    ],
-    impactStatement: 'Replaces an entire software stack with one AI-native platform.',
-    url: 'https://dinoclaw.app',
-    image: '/images/portfolio/dinoclaw-dashboard.png',
-    industry: 'Business Operations'
-  },
-  {
     id: 'brandeezy',
     name: 'Brandeezy',
     tagline: 'Professional brand photography without the photoshoot',
@@ -135,6 +160,46 @@ export const projects: Project[] = [
     url: 'https://brandeezy.io',
     image: '/images/portfolio/brandeezy-dashboard.png',
     industry: 'Marketing & Content'
+  },
+  {
+    id: 'hoa-hunter',
+    name: 'HOA Hunter',
+    tagline: 'Find and reach every HOA board member in Florida',
+    description: 'The most comprehensive database and outreach platform for targeting HOA board members. Companies selling services to HOAs can search, filter, and contact decision-makers directly — all from one tool.',
+    category: 'product',
+    uvp: 'The only platform combining a verified HOA database with multi-channel outreach. Cuts lead acquisition time by over 80%.',
+    targetMarket: 'Property management companies, HOA service contractors, professional services',
+    techStack: ['Next.js', 'PostgreSQL', 'Prisma', 'Twilio', 'Stripe'],
+    highlights: [
+      '168,969 verified board members in the database',
+      'Multi-channel outreach — phone, email, and direct mail',
+      'AI-powered smart dialer for efficient calling',
+      'Search by location, association size, and service needs'
+    ],
+    impactStatement: 'Reduced lead acquisition time by over 80% for service companies targeting HOAs.',
+    url: 'https://hoahunter.com',
+    image: '/images/portfolio/hoahunter-dashboard.png',
+    industry: 'Sales & Outreach'
+  },
+  {
+    id: 'hailtruth',
+    name: 'HailTruth',
+    tagline: 'Scientific hail damage analysis, not guesswork',
+    description: 'Advanced physics-based hail damage analysis platform with radar timelapse, AI fraud detection, and portfolio intelligence. Built to validate claims with data, not opinions.',
+    category: 'product',
+    uvp: 'The only platform combining radar timelapse, fraud detection, and portfolio intelligence to validate hail claims with scientific precision.',
+    targetMarket: 'Insurance carriers, roofing contractors, forensic engineers',
+    techStack: ['Next.js', 'Python', 'TensorFlow', 'Mapbox'],
+    highlights: [
+      'Physics-based hail analysis modeling',
+      'AI-powered fraud detection',
+      'Portfolio-wide intelligence and reporting',
+      'Federal Rule 702 compliant methodology'
+    ],
+    impactStatement: 'Brings scientific rigor to an industry that has relied on subjective field inspections.',
+    url: 'https://hailtruth.ai',
+    image: '/images/portfolio/hailtruth-dashboard.png',
+    industry: 'Insurance & Roofing'
   },
   {
     id: 'exotic-tracker-pro',
@@ -234,11 +299,33 @@ export const projects: Project[] = [
     url: 'https://cougarcompanies.com',
     image: '/images/portfolio/cougar-companies-dashboard.png',
     industry: 'Construction'
+  },
+  {
+    id: 'uncorpwear',
+    name: 'Uncorpwear',
+    tagline: 'Anti-corporate streetwear with attitude',
+    description: 'E-commerce storefront for a streetwear brand that turns corporate culture on its head. Custom Shopify-integrated design with bold visuals, product showcases, and a brand identity that stands out in the crowded apparel space.',
+    category: 'client',
+    uvp: 'A brand presence as bold as the clothing — designed to convert browsers into buyers with unapologetic style.',
+    targetMarket: 'Streetwear enthusiasts, anti-corporate culture, young professionals',
+    techStack: ['Shopify', 'Custom Theme', 'JavaScript'],
+    highlights: [
+      'Custom e-commerce design with bold brand identity',
+      'Product showcase with lifestyle imagery',
+      'Mobile-first responsive design',
+      'Integrated Shopify checkout and inventory'
+    ],
+    impactStatement: 'Built a brand presence that matches the irreverence of the product line.',
+    url: 'https://uncorpwear.com',
+    image: '/images/portfolio/uncorpwear-dashboard.png',
+    industry: 'E-Commerce & Fashion'
   }
 ];
 
 export const getAllProjects = (): Project[] => projects;
 export const getProjectsByCategory = (category: 'product' | 'client'): Project[] =>
-  projects.filter(p => p.category === category);
+  projects.filter(p => p.category === category && !p.featured);
+export const getFeaturedProjects = (): Project[] =>
+  projects.filter(p => p.featured);
 export const getProjectById = (id: string): Project | undefined =>
   projects.find(p => p.id === id);

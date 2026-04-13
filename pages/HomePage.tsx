@@ -16,7 +16,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const HomePage: React.FC = () => {
   const allProjects = getAllProjects();
-  const featuredIds = ['caso-comply', 'slotica', 'dinoclaw'];
+  const featuredIds = ['slotica', 'hoa-cloud', 'dinoclaw'];
   const featuredProjects = featuredIds
     .map(id => allProjects.find(p => p.id === id))
     .filter(Boolean);
