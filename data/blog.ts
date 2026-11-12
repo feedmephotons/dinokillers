@@ -3,37 +3,67 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  updated?: string;
   readTime: string;
-  content: string;
   author: string;
+  category: string;
+  serviceId: string;
+  content: string;
 }
-
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'off-the-shelf-software-killing-your-business',
-    title: 'Why Off-the-Shelf Software Is Killing Your Business',
-    excerpt: "You're paying for 200 features and using 12. Meanwhile, the 3 things you actually need don't exist. Sound familiar?",
-    date: '2026-03-01',
-    readTime: '4 min read',
-    author: 'Winston Fowlkes',
-    content: `Every business eventually hits the same wall. You sign up for the "industry-leading" software, spend weeks getting your team trained on it, and then realize it doesn't do the one thing you actually needed it for.\n\nSo you build a workaround. Then another. Then you hire someone whose entire job is managing the workarounds.\n\nThis is the hidden cost of off-the-shelf software. It's not the monthly subscription — it's the thousands of dollars in wasted time your team spends fighting a tool that wasn't built for how you work.\n\n**The real math:**\n\nMost businesses we work with are spending 10-20 hours per week on manual processes that exist only because their software can't handle their actual workflow. At $30-50/hour, that's $15,000-$50,000 per year in lost productivity — for a single team.\n\n**The alternative:**\n\nCustom software costs more upfront, but it does exactly what you need. No workarounds. No "we'll put in a feature request." No training your team to think like the software instead of the other way around.\n\nWe've built custom platforms for roofing companies, HOA management, metal fabrication shops, and marketing agencies. Every single one replaced a stack of 3-5 tools with one system that actually fit.\n\n**The question isn't "can we afford custom software?" It's "can we afford to keep paying for software that doesn't work?"**`
+    slug: "off-the-shelf-software-killing-your-business",
+    title: "Custom software or off-the-shelf? Start with the workflow.",
+    excerpt:
+      "A practical way to decide whether to configure what you have, connect your tools, or build something purpose-made.",
+    date: "2026-03-01",
+    updated: "2026-09-12",
+    readTime: "4 min read",
+    author: "Winston Fowlkes",
+    category: "Software strategy",
+    serviceId: "custom-software",
+    content:
+      "## The decision starts with the job\nBefore choosing a platform or commissioning software, write down the work that needs to happen. Pick one real customer, job, or document and follow it from start to finish. Who touches it? Where does information get copied? Which decisions depend on an email, a spreadsheet, or one person’s memory?\nThis gives you something more useful than a feature wish list: a picture of the workflow. A tool can have a long list of capabilities and still leave the most important handoff unresolved.\n## Look for the smallest useful intervention\nThere are usually three options. You can configure an existing product, connect the tools you already use, or build a custom application. Each can be the right choice.\n**Configure** when your process fits a product reasonably well and the friction comes from setup, permissions, reporting, or training.\n**Connect** when the individual tools work but information does not move between them. A focused integration can solve a recurring problem without replacing everything.\n**Build** when a distinctive workflow is central to the business, existing tools repeatedly force compromises, or the product itself is what you are creating.\n## Count the cost of the whole workflow\nSubscription prices are visible. Repeated entry, reconciliation, and correction are easier to overlook. Ask the people doing the work to identify those tasks and estimate their frequency.\nUse estimates as a starting point, then measure a representative sample. Record the task, time spent, rework, and the conditions that make it harder. Avoid turning a rough guess into an exact return-on-investment claim.\nA custom system also has ongoing costs: hosting, third-party services, maintenance, support, and changes as the business evolves. Compare the complete ownership picture on both sides.\n## Define a first release that can stand on its own\nA first release should complete one useful workflow. It might take a lead from inquiry to qualified opportunity, or turn an approved document into a scheduled task.\nDecide what belongs in that release and what can wait. Include the unglamorous work: importing data, handling exceptions, assigning permissions, and making the tool understandable to its users.\n## Make the decision with the team\nThe person buying the software and the person using it every day may see different problems. Bring both into the conversation. Walk through ordinary tasks and difficult examples, then agree on what a better result would look like.\nCustom software is strongest when it has a clear job, a committed owner, and a feedback loop. Start there. The technology follows.",
   },
   {
-    slug: 'ai-in-construction-real-vs-hype',
-    title: "AI in Construction: What's Real and What's Hype",
-    excerpt: "Everyone's talking about AI in construction. Here's what's actually working right now versus what's still a sales pitch.",
-    date: '2026-02-15',
-    readTime: '5 min read',
-    author: 'Winston Fowlkes',
-    content: `If you're in construction or the trades, you've probably been pitched "AI-powered" everything by now. AI scheduling. AI estimating. AI project management. Most of it is marketing slapped on basic automation.\n\nHere's what's actually delivering results right now:\n\n**What's real:**\n\n**Document processing.** AI can read a PO, extract the relevant info, and put it in your system in seconds. We built this for a metal fabrication company — their admin went from 30 minutes of data entry per meeting to 2 minutes of review.\n\n**Meeting intelligence.** Record your site meetings, and AI pulls out action items, deadlines, and assignments automatically. No more "wait, who was supposed to order that?"\n\n**Lead qualification.** AI can look at incoming leads and tell you which ones are worth your time based on patterns in your past wins. Stop chasing bad leads.\n\n**What's hype (for now):**\n\n**AI estimating.** It's getting better, but it's not replacing your estimator anytime soon. Too many variables that require boots-on-the-ground knowledge.\n\n**Fully autonomous scheduling.** AI can suggest schedules, but construction has too many real-world variables (weather, permits, material delays) for full automation.\n\n**The bottom line:** AI works best when it handles the boring stuff your team hates doing. It's not replacing skilled workers — it's giving them back the hours they spend on paperwork.`
+    slug: "ai-in-construction-real-vs-hype",
+    title: "Where AI fits in a construction workflow.",
+    excerpt:
+      "Start with documents, meeting notes, and repeatable administrative tasks. Define the review step before you automate the handoff.",
+    date: "2026-02-15",
+    updated: "2026-09-12",
+    readTime: "4 min read",
+    author: "Winston Fowlkes",
+    category: "AI & operations",
+    serviceId: "ai-integration",
+    content:
+      "## Start with one specific task\nAn AI project is easier to evaluate when the task is concrete. “Help us use AI” is broad. “Extract the job reference, requested date, and line items from these purchase orders for review” is a task you can test.\nConstruction and trade businesses produce a steady stream of unstructured information: field notes, meeting discussions, supplier documents, and email threads. These are useful places to explore assistance, provided the output has a clear destination.\n## Documents need a review path\nA document workflow can take an incoming file, extract selected fields, and present them beside the source. The reviewer needs to see enough context to spot errors and correct them before the information moves into another system.\nTest ordinary documents and awkward ones. Include scans, missing fields, unfamiliar layouts, and ambiguous references. Decide what happens when the system cannot identify a value.\nThe useful question is not whether AI can produce an answer. It is whether the surrounding workflow lets the team trust, inspect, and correct that answer.\n## Meeting notes become useful when they connect to the work\nA transcript is a record, but a schedule needs decisions, owners, and dates. An AI-assisted meeting workflow can propose action items and associate them with the relevant project.\nKeep a human review step before important assignments or schedule changes take effect. A conversation may include a suggestion, a question, or a tentative date; those should not all become confirmed instructions.\nThe Metalcrafters project explores this connection between meeting intelligence and fabrication scheduling. The design problem is the handoff from discussion to organized follow-up.\n## Choose success criteria before the pilot\nPick a representative set of examples. Compare the assisted workflow with the current one using review time, corrections required, and how often someone has to start over.\nTrack ongoing usage costs and the work needed to maintain the integration. A pilot that looks promising in isolation may create extra effort elsewhere in the process.\n## Keep the operating team in the loop\nAI assistance works best when the people using it know what it does and where its limits are. Give them a straightforward way to inspect the source, change the result, and send difficult cases to a person.\nStart with a narrow task, evaluate it with real examples, and expand only when the workflow earns it. That is a more practical starting point than trying to automate an entire operation at once.",
   },
   {
-    slug: 'custom-crm-advantage',
-    title: 'The Custom CRM Advantage',
-    excerpt: "Salesforce has 3,000+ features. You need about 15. Here's why building your own might be the smartest move you make this year.",
-    date: '2026-01-28',
-    readTime: '3 min read',
-    author: 'Brance Wages',
-    content: `I've used Salesforce, HubSpot, Zoho, and about six other CRMs. They all have the same problem: they were built for everyone, which means they were built for no one.\n\nWhen we started Roof Wars, I needed a CRM that understood roofing. That meant tracking insurance claims alongside leads, managing crew schedules, and connecting to our specific vendors. No off-the-shelf CRM does that without a rats nest of integrations and workarounds.\n\n**What a custom CRM gives you:**\n\n**It matches your process.** Not the other way around. Your team doesn't need to learn a new way of working — the software adapts to what already works.\n\n**It grows with you.** Need a new feature? We build it. You're not waiting on a product roadmap or voting on a feature request forum.\n\n**It connects to everything.** Your accounting software, your scheduling tools, your email — all in one place, talking to each other without duct tape.\n\n**It costs less than you think.** The price of a custom CRM has dropped dramatically. Between modern frameworks and AI-assisted development, we can build in weeks what used to take months.\n\n**The question to ask yourself:** How much time does your team spend working around your current CRM? If it's more than a few hours a week, you're already paying for a custom one — you're just not getting it.`
-  }
+    slug: "custom-crm-advantage",
+    title: "What to map before building a custom CRM.",
+    excerpt:
+      "The questions about people, data, and handoffs that matter more than a long list of CRM features.",
+    date: "2026-01-28",
+    updated: "2026-09-12",
+    readTime: "4 min read",
+    author: "Brance Wages",
+    category: "CRM planning",
+    serviceId: "automation",
+    content:
+      "## Start with the customer journey\nA CRM is often described as a database of leads and customers. In practice, it is also a record of who needs to do what next.\nTrace a recent customer from the first inquiry to the completed work. Identify the information captured, the decisions made, and the people responsible at each stage. Pay attention to the moments when one team hands off to another.\nA generic pipeline can miss important industry details. A trade business may need field measurements, location context, proposal revisions, and project scheduling to remain connected to the customer record.\n## Decide what each record represents\nA company, a person, a property, a job, and an opportunity are different things. Confusing them creates duplicates and makes reporting harder later.\nWrite down how those records relate. One customer might own several properties. One job might involve several contacts. A company might have multiple locations with different access needs.\nThese relationships shape the application more deeply than the names of the screens.\n## Make responsibilities explicit\nFor every stage, identify who owns the next action. Define which information is required to move forward and which exceptions need a decision.\nPermissions belong in the same conversation. A field user, a salesperson, and an administrator may need different access to the same project. Decide what each role can view and change.\n## Plan migration before launch week\nExisting records are part of the operating history of the business. Before choosing a transition date, understand what needs to move and how it will be checked.\nLook for duplicates, missing values, attachments, notes, and relationships that may be encoded in unexpected places. Use sample imports to test the mapping, then define a reconciliation process.\nA migration plan should also explain how the team handles new work during the transition. That decision depends on the systems and the business; it should not be left until the final days.\n## Define a useful first release\nStart with a complete customer workflow rather than a collection of disconnected features. Agree on the core records, the important handoffs, the first reports, and the integrations required to do the work.\nThe SeegarsONE project illustrates why industry context matters: field information, proposal tools, and multi-location workflows belong in the CRM conversation from the beginning.\nBring those details to the first discussion. They are the raw material for a system that fits the business.",
+  },
+  {
+    slug: "website-content-before-design",
+    title: "Your website needs a clearer story before it needs more pages.",
+    excerpt:
+      "How to plan service pages and case studies around the decisions your customers actually need to make.",
+    date: "2026-09-12",
+    readTime: "3 min read",
+    author: "Winston Fowlkes",
+    category: "Web & content",
+    serviceId: "brand-digital",
+    content:
+      "## Give the visitor a way to recognize themselves\nA visitor should be able to tell what you do, who you do it for, and why your work is relevant. Start with a specific business problem or a recognizable need.\nThe homepage can introduce the range of your work. A service page has a narrower job: help someone understand a particular offering, assess whether it fits, and see what working together might involve.\n## Show the thinking behind the work\nA project name and an attractive screenshot introduce the work. A case study explains it.\nDescribe the original challenge, the constraints, and the decisions that shaped the solution. Explain what was built in terms a prospective customer can connect to their own operation.\nMeasured outcomes can make that story stronger when the evidence is available. Record the source, time period, and method behind a number. If you cannot support it, explain the delivered capability instead.\n## Build a useful route through the site\nConnect a service page to a relevant project. Link the project to its case study. Give each a clear next step for a visitor with a similar problem.\nA small set of useful pages is easier to maintain than a large collection that repeats the same claims. Add a page when it answers a distinct question or helps someone make a decision.\n## Make the inquiry specific\nA good contact form helps someone explain what they need. Ask for the problem, the current process, and any meaningful constraints. Keep the first step manageable.\nBe clear about what happens when the form is used. A message should only be described as sent when it has actually been delivered to the receiving system.\n## Keep the content connected to the business\nAs projects evolve, review screenshots, capabilities, team information, and contact details. An accurate, understandable website is a stronger starting point for design and search than a collection of impressive but unverified promises.",
+  },
 ];

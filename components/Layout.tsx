@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-
-const Layout: React.FC = () => {
-  const { pathname } = useLocation();
-
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import SEO from "./SEO";
+export default function Layout() {
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return (
-    <div className="min-h-screen bg-brand-black text-white font-sans selection:bg-brand-purple/30 selection:text-brand-cyan">
+    <>
+      <SEO />
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
-};
-
-export default Layout;
+}
