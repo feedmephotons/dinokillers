@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Wordmark } from "./Navbar";
 
 export default function Footer() {
   return (
@@ -9,13 +8,12 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="wordmark" aria-label="Dino Killers home">
               <img
-                src="/images/dk-mark.png"
-                width="48"
-                height="48"
-                alt=""
+                src="/images/dk-logo-stacked.webp"
+                width="720"
+                height="354"
+                alt="Dino Killers"
                 loading="lazy"
               />
-              <Wordmark />
             </Link>
             <p>
               Custom software, AI, and websites for businesses that have

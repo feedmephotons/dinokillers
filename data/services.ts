@@ -50,7 +50,7 @@ export const services = [
     fit: "Best for repeatable tasks with accessible inputs and a clear way to judge the output. High-stakes decisions get a named reviewer and a way to correct mistakes.",
     process:
       "We test the idea against real examples before we expand it. We define what the system produces, how people review it, and how exceptions reach the right person. The result is a tool your team understands and uses the same way every time.",
-    projectIds: ["metalcrafters", "caso-collect"],
+    projectIds: ["caso-comply", "caso-collect"],
     icon: "Cpu",
   },
   {
@@ -77,7 +77,7 @@ export const services = [
     fit: "A good fit for teams juggling spreadsheets, shared inboxes, and systems that don’t talk to each other. Sometimes an integration is enough. Sometimes the workflow needs its own application.",
     process:
       "We trace a real job or customer from first contact to completion. We pick out the repeated steps that cost time or cause confusion, then automate them with explicit rules and clear ownership.",
-    projectIds: ["seegarsone", "metalcrafters"],
+    projectIds: ["seegarsone", "metal-caddie"],
     icon: "Zap",
   },
   {

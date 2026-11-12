@@ -75,14 +75,18 @@ export function ProjectCard({
   const href = study
     ? "/case-studies/" + study.slug
     : "/portfolio/" + project.id;
-  const shot = project.image && !noScreenshot.has(project.id);
+  const src =
+    project.thumb ??
+    (noScreenshot.has(project.id) ? undefined : project.image);
+  const shot = Boolean(src);
   return (
     <article className={"project-card" + (wide ? " project-card-wide" : "")}>
       <Link to={href} className="project-link">
         <div className={"project-visual" + (shot ? "" : " project-visual-type")}>
           {shot ? (
             <img
-              src={project.image}
+              src={src}
+              className={project.thumb ? "project-thumb" : undefined}
               alt={project.name + " interface"}
               width="1400"
               height="900"

@@ -5,7 +5,7 @@ import { services } from "../data/services";
 import { blogPosts } from "../data/blog";
 import { team } from "../data/team";
 import { ContactCTA, ProjectCard, TextLink } from "../components/Shared";
-import { Meteor, Sky, Strata } from "../components/Art";
+import { Strata } from "../components/Art";
 
 const specimens = [
   {
@@ -51,42 +51,55 @@ const specimens = [
 ];
 
 export default function HomePage() {
-  const [lead, ...rest] = ["buildx", "metalcrafters", "hoa-cloud"].map(
+  const [lead, ...rest] = ["buildx", "metal-caddie", "hoa-cloud"].map(
     (id) => projects.find((p) => p.id === id)!,
   );
   return (
     <>
       <section className="hero">
-        <Sky />
-        <div className="container hero-inner">
-          <h1>
-            <span>We kill</span>
-            <span>dinosaurs.</span>
-          </h1>
-          <div className="hero-scene" aria-hidden="true">
-            <img
-              className="hero-skull"
-              src="/images/art/skull.webp"
-              alt=""
-              width="1459"
-              height="1024"
-              fetchPriority="high"
-            />
-            <div className="meteor">
-              <Meteor />
+        <div className="hero-stage">
+          <div className="hero-dots" aria-hidden="true" />
+          <div className="hero-dots hero-dots-cyan" aria-hidden="true" />
+          <div className="hero-window" aria-hidden="true">
+            <div className="hero-window-bar">
+              <i />
+              <i />
+              <i />
+              <span>legacy-software.exe</span>
             </div>
           </div>
+          <h1>
+            <span>Break</span>
+            <span>the</span>
+            <span>system.</span>
+          </h1>
+          <img
+            className="hero-art hero-claw"
+            src="/images/art/hero-claw.webp"
+            alt=""
+            width="1672"
+            height="941"
+            fetchPriority="high"
+          />
+          <img
+            className="hero-art hero-tear"
+            src="/images/art/hero-tear.webp"
+            alt=""
+            width="2172"
+            height="724"
+          />
+          <img
+            className="hero-art hero-shards"
+            src="/images/art/hero-shards.webp"
+            alt=""
+            width="1672"
+            height="941"
+          />
           <div className="hero-body">
-            <div>
-              <p>
-                The spreadsheet that runs your company. The CRM your team
-                works around. The software you’ve been renting since 2009.
-              </p>
-              <p>
-                Dino Killers replaces them with custom software and AI built
-                around how your business actually works.
-              </p>
-            </div>
+            <p>
+              Replace your legacy software with custom software and AI built
+              around how your business actually works.
+            </p>
             <div className="hero-actions">
               <Link to="/contact" className="button">
                 Start a project <ArrowUpRight size={20} />
@@ -94,6 +107,8 @@ export default function HomePage() {
               <TextLink to="/portfolio">See what we’ve built</TextLink>
             </div>
           </div>
+        </div>
+        <div className="container">
           <p className="hero-foot">
             <span>
               Software for construction, roofing, fabrication, associations,

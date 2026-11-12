@@ -37,41 +37,41 @@ export const caseStudies = [
     serviceIds: ["custom-software", "operations"],
   },
   {
-    slug: "metalcrafters-scheduling",
-    projectId: "metalcrafters",
-    title: "Turning meeting notes into a production schedule.",
-    client: "Metalcrafters",
-    industry: "Custom metal fabrication",
+    slug: "metal-caddie-fabrication-operations",
+    projectId: "metal-caddie",
+    title: "Running a metal shop from quote to payment.",
+    client: "Metal Caddie",
+    industry: "Metal fabrication",
     kind: "Client build",
     summary:
-      "A scheduling app for a custom metal fabricator that turns meetings into action items and ties them to the schedule, crew time, and purchase orders.",
+      "An operations app for a metal fabrication shop that keeps selling, building, and billing in one place, built on the same platform as BuildX.",
     problem:
-      "A custom fabrication shop juggles multiple clients, moving install dates, shop capacity, and crews in the field. Meetings produce decisions, and those decisions have to become tasks and schedule changes. When that depends on someone retyping their notes, follow-up turns into its own job.",
+      "A fabrication shop sells from quotes and estimates, builds from sheet stock it has to track and reorder, and bills job by job. When each of those lives in a different tool, the same job gets typed in three times and nobody can see where it stands without asking around.",
     approach:
-      "We built a scheduling and project management app around how fabrication work moves. It transcribes meetings and uses AI to pull out proposed action items. Schedule views, crew time tracking, and purchase-order parsing sit in the same application, so the paperwork stays next to the work.",
+      "We took the platform behind BuildX and shaped it around a fabrication shop. The home screen is grouped the way the work moves: sell, build, bill. Each group opens the tools that stage needs, and the open-job count, pipeline, and overdue receivables sit at the top of the same screen.",
     decisions: [
       {
-        title: "Make the meeting useful after it ends",
-        body: "Action items come out of the transcript with deadlines and project context attached. The team reviews proposed changes before they count.",
+        title: "Organize by the stage of the job",
+        body: "Leads, quote requests, estimates, and sales orders sit together. So do scanning, inventory, purchasing, and delivery. Billing has its own group. People find a tool by asking where the job is.",
       },
       {
-        title: "Keep the schedule tied to production",
-        body: "The schedule shows the stages of fabrication and installation, with dependencies and timing on the same screen.",
+        title: "Build the shop’s own math in",
+        body: "A sheet calculator and sheet inventory are part of the app. Material is what a fabrication quote turns on, so it doesn’t live in a side spreadsheet.",
       },
       {
-        title: "Handle the paperwork next to the work",
-        body: "Purchase orders get parsed and crew time gets tracked in the same app as the schedule. Neither is left in a separate process.",
+        title: "Give each role its own starting point",
+        body: "The owner, the front office, finance, marketing, and outside sales each get a dashboard for their part of the business, all reading from the same jobs.",
       },
     ],
     impact: [
-      "Meeting transcription and action-item extraction",
-      "Fabrication scheduling with dependency views",
-      "Crew time tracking",
-      "Purchase-order parsing",
+      "Leads, quote requests, estimates, and sales orders",
+      "Sheet calculator and sheet inventory",
+      "Purchase orders, receiving, and delivery scheduling",
+      "Invoices, payments, and overdue receivables",
     ],
     takeaway:
-      "Here, AI is the bridge between a loose conversation and a structured schedule. People still review what crosses it.",
-    serviceIds: ["ai-integration", "automation"],
+      "A platform built for one trade can be reshaped for another when the screens follow that trade’s work. The fabrication version shares its foundation with BuildX and little of its vocabulary.",
+    serviceIds: ["custom-software", "automation"],
   },
   {
     slug: "cougar-companies-digital-transformation",

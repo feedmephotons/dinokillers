@@ -9,14 +9,6 @@ const links = [
   ["Field notes", "/blog"],
 ];
 
-export function Wordmark() {
-  return (
-    <span className="wordmark-text">
-      Dino <span>Killers</span>
-    </span>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -36,8 +28,12 @@ export default function Navbar() {
     <header className="site-header">
       <div className="container nav-bar">
         <Link to="/" className="wordmark" aria-label="Dino Killers home">
-          <img src="/images/dk-mark.png" width="40" height="40" alt="" />
-          <Wordmark />
+          <img
+            src="/images/dk-logo-wide.webp"
+            width="900"
+            height="129"
+            alt="Dino Killers"
+          />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map(([label, path]) => (

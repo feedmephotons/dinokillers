@@ -11,6 +11,7 @@ export interface Project {
   impactStatement: string;
   url?: string;
   image?: string;
+  thumb?: string;
   industry: string;
   featured?: boolean;
 }
@@ -44,6 +45,7 @@ export const projects: Project[] = [
       "Art, mechanics, and production tools sit in the same project, so a game stops being a relay race between apps.",
     url: "https://slotica.io",
     image: "/images/portfolio/slotica-dashboard.png",
+    thumb: "/images/portfolio/slotica-thumb.webp",
     industry: "Gaming & iGaming",
   },
   {
@@ -68,6 +70,7 @@ export const projects: Project[] = [
       "Moves a board’s documents and recurring admin out of personal inboxes and into one shared workspace.",
     url: "https://hoacloud.app",
     image: "/images/portfolio/hoacloud-dashboard.png",
+    thumb: "/images/portfolio/hoa-cloud-thumb.webp",
     industry: "Property Management",
   },
   {
@@ -121,6 +124,7 @@ export const projects: Project[] = [
       "Turns a backlog of PDFs into a queue: scanned, processed, remediated, reviewed.",
     url: "https://casocomply.com",
     image: "/images/portfolio/caso-comply-dashboard.png",
+    thumb: "/images/portfolio/caso-comply-thumb.webp",
     industry: "Document Compliance",
   },
   {
@@ -213,6 +217,7 @@ export const projects: Project[] = [
       "The record you research is the record you follow up from. No copying contacts into another list.",
     url: "https://hoahunter.com",
     image: "/images/portfolio/hoahunter-dashboard.png",
+    thumb: "/images/portfolio/hoa-hunter-thumb.webp",
     industry: "Sales & Outreach",
   },
   {
@@ -285,6 +290,7 @@ export const projects: Project[] = [
       "Sales, operations, and billing work from one job record, so nobody rebuilds the story at each handoff.",
     url: "https://build-x2.vercel.app",
     image: "/images/portfolio/buildx-dashboard.png",
+    thumb: "/images/portfolio/buildx-thumb.webp",
     industry: "Construction",
   },
   {
@@ -307,36 +313,37 @@ export const projects: Project[] = [
       "Field notes, customer history, and proposals live in one system built for how a fence company works.",
     url: "https://seegars.one",
     image: "/images/portfolio/seegarsone-dashboard.png",
+    thumb: "/images/portfolio/seegarsone-thumb.webp",
     industry: "Fencing & Construction",
   },
   {
-    id: "metalcrafters",
-    name: "Metalcrafters",
-    tagline: "From the meeting to the schedule",
+    id: "metal-caddie",
+    name: "Metal Caddie",
+    tagline: "Sell, build, and bill from one screen",
     description:
-      "A scheduling app for a custom metal fabricator. It transcribes meetings, pulls out the action items, and connects them to the fabrication schedule, crew time tracking, and purchase orders.",
+      "Metal Caddie runs a metal fabrication shop from first lead to final payment. Quotes, estimates, sheet inventory, purchasing, delivery, and invoicing live in one app, built on the same platform as BuildX.",
     category: "client",
-    uvp: "What gets said in the meeting becomes reviewed tasks on the schedule.",
-    targetMarket: "Custom metal fabricators, construction subcontractors",
+    uvp: "The shop’s whole job cycle in one place, organized the way the work moves: sell, build, bill.",
+    targetMarket: "Metal fabricators, sheet-metal shops, construction suppliers",
     techStack: [
       "Next.js",
       "Supabase",
-      "Whisper AI",
+      "Drizzle ORM",
+      "Gemini AI",
       "Claude AI",
-      "Leaflet Maps",
-      "Gantt",
+      "shadcn/ui",
     ],
     highlights: [
-      "Meeting transcription and action-item extraction",
-      "Fabrication scheduling with dependency views",
-      "Crew time tracking",
-      "Purchase-order parsing",
+      "Leads, quote requests, estimates, and sales orders",
+      "Sheet calculator and sheet inventory",
+      "Purchase orders, receiving, and delivery scheduling",
+      "Invoices, payments, and overdue receivables",
     ],
     impactStatement:
-      "Decisions made in a meeting land in the same tool the shop uses to plan work.",
-    url: "https://metalcrafters.app",
-    image: "/images/portfolio/metalcrafters-dashboard.png",
-    industry: "Manufacturing",
+      "Sales, the shop floor, and the back office work from the same job, so nothing gets retyped between quote and invoice.",
+    image: "/images/portfolio/metal-caddie-thumb.webp",
+    thumb: "/images/portfolio/metal-caddie-thumb.webp",
+    industry: "Metal Fabrication",
   },
   {
     id: "cougar-companies",
