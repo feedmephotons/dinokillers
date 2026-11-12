@@ -101,6 +101,7 @@ export const projects: Project[] = [
       "Puts a conversational agent next to the everyday work of a business: customers, projects, and invoices.",
     url: "https://dinoclaw.app",
     image: "/images/portfolio/dinoclaw-dashboard.png",
+    thumb: "/images/portfolio/dinoclaw-thumb.webp",
     industry: "Business Operations",
   },
   {
@@ -110,6 +111,7 @@ export const projects: Project[] = [
     description:
       "CASO Comply scans documents, processes PDF structure, and uses AI for the first pass of accessibility remediation. People review the output. It supports accessibility work and does not guarantee compliance.",
     category: "product",
+    featured: true,
     uvp: "Scanning, PDF processing, and AI-assisted remediation in one workflow, with review built in.",
     targetMarket:
       "Government agencies, universities, healthcare systems, legal firms",
@@ -203,6 +205,7 @@ export const projects: Project[] = [
     description:
       "HOA Hunter is a searchable database of Florida associations and board contacts. Filter by location, find the associations in your service area, and run outreach from the same record.",
     category: "product",
+    featured: true,
     uvp: "Research and follow-up in one place, built for companies that sell to associations.",
     targetMarket:
       "Property management companies, HOA service contractors, professional services",
@@ -323,6 +326,7 @@ export const projects: Project[] = [
     description:
       "Metal Caddie runs a metal fabrication shop from first lead to final payment. Quotes, estimates, sheet inventory, purchasing, delivery, and invoicing live in one app, built on the same platform as BuildX.",
     category: "client",
+    featured: true,
     uvp: "The shop’s whole job cycle in one place, organized the way the work moves: sell, build, bill.",
     targetMarket: "Metal fabricators, sheet-metal shops, construction suppliers",
     techStack: [

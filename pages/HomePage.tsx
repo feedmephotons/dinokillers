@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "../data/projects";
 import { services } from "../data/services";
 import { blogPosts } from "../data/blog";
 import { team } from "../data/team";
-import { ContactCTA, ProjectCard, TextLink } from "../components/Shared";
+import { ContactCTA, TextLink } from "../components/Shared";
+import { FeaturedProjects } from "../components/Featured";
 import { Strata } from "../components/Art";
 
 const specimens = [
@@ -51,9 +51,6 @@ const specimens = [
 ];
 
 export default function HomePage() {
-  const [lead, ...rest] = ["buildx", "metal-caddie", "hoa-cloud"].map(
-    (id) => projects.find((p) => p.id === id)!,
-  );
   return (
     <>
       <section className="hero">
@@ -168,12 +165,7 @@ export default function HomePage() {
           <h2>What we built in their place.</h2>
           <TextLink to="/portfolio">All work</TextLink>
         </div>
-        <div className="project-grid">
-          <ProjectCard project={lead} wide />
-          {rest.map((p) => (
-            <ProjectCard key={p.id} project={p} />
-          ))}
-        </div>
+        <FeaturedProjects />
       </section>
 
       <section className="container section">
