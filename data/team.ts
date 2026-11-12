@@ -39,4 +39,17 @@ export const team: TeamMember[] = [
       "Direct Condo Association Relationships",
     ],
   },
+  {
+    id: "michael",
+    name: "Michael Tole",
+    role: "The Closer",
+    image: "/images/michael-headshot.webp",
+    location: "Dallas, TX",
+    bio: "Michael lives in Dallas and has worked in sales his whole career, across software, real estate, and the trades. He leads sales at Dino Killers and is the one who gets projects over the finish line.",
+    background: [
+      "Software Sales",
+      "Real Estate Sales",
+      "Sales in the Trades",
+    ],
+  },
 ];

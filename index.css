@@ -996,7 +996,7 @@ p {
 }
 .operators-photos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
 .operators-photos figure:nth-child(2) {
@@ -1461,14 +1461,14 @@ p {
 
 .team-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3.6vw, 56px);
 }
 .team-card {
   display: grid;
-  grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
-  gap: 26px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  align-content: start;
 }
 .team-card h3 {
   font-size: 1.6rem;

@@ -172,7 +172,7 @@ export default function HomePage() {
         <div className="section-heading">
           <h2>How we do the killing.</h2>
           <p>
-            Strategy, design, and development from the same two people, so the
+            Strategy, design, and development from the same small team, so the
             thing that gets built is the thing you actually needed.
           </p>
         </div>
@@ -211,13 +211,15 @@ export default function HomePage() {
             Brance runs a commercial roofing company and works with condo
             boards every week. Winston has spent years inside construction and
             roofing companies, building their software and their marketing.
+            Michael has sold software, real estate, and trade work, and he is
+            the one who gets projects finished.
           </p>
           <p>
             We’ve chased the invoices, sat in the production meetings, and
             fought the same tools you’re fighting. When you describe the
             problem, you won’t have to explain why it matters.
           </p>
-          <TextLink to="/about">Meet Winston and Brance</TextLink>
+          <TextLink to="/about">Meet the team</TextLink>
         </div>
       </section>
 

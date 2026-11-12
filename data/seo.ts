@@ -20,7 +20,7 @@ const pages: Record<string, [string, string]> = {
   ],
   "/about": [
     "Meet the Studio",
-    "Meet Winston Fowlkes and Brance Wages, the two founders of Dino Killers: business operators who build software for operations-heavy companies.",
+    "Meet Winston Fowlkes, Brance Wages, and Michael Tole of Dino Killers: business operators who build software for operations-heavy companies.",
   ],
   "/services": [
     "Custom Software, AI Integration & Website Services",

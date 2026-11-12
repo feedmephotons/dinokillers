@@ -6,16 +6,19 @@ const bios: Record<string, string> = {
     "Winston writes the software and shapes how it looks. He came up through marketing, photography, and video before development took over, and he has spent years working inside Florida construction and roofing companies. He builds for the person who has to use the thing on a Tuesday afternoon.",
   brance:
     "Brance runs Roof Wars, a commercial roofing company working in Naples and Dallas, and sits across the table from condo and HOA boards every week. He founded the geofencing startup GeoAI and co-founded HOA Hunter and HOA Cloud. He is usually the first customer for what we build.",
+  michael:
+    "Michael has sold for his whole career, in software, real estate, and the trades. He leads our sales, and he is the one who gets a project over the finish line when the builders get distracted by the next idea. Away from work he lifts, boxes, and takes on projects most people would call too ambitious.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageIntro title="Two operators who got tired of bad software.">
+      <PageIntro title="Operators who got tired of bad software.">
         <p>
-          Dino Killers is Winston Fowlkes and Brance Wages. We build custom
-          software, AI tools, and websites for businesses like the ones we’ve
-          worked in and run.
+          Dino Killers was founded by Winston Fowlkes and Brance Wages, and
+          Michael Tole makes sure what we start gets finished. We build
+          custom software, AI tools, and websites for businesses like the
+          ones we’ve worked in and run.
         </p>
       </PageIntro>
       <section className="container section statement">
@@ -37,7 +40,7 @@ export default function AboutPage() {
       </section>
       <section className="container section">
         <div className="section-heading">
-          <h2>You work with the founders.</h2>
+          <h2>You work with us directly.</h2>
           <p>
             No account managers and no handoff to a junior team. The people
             you talk to are the people who build it.
@@ -48,7 +51,7 @@ export default function AboutPage() {
             <article className="team-card" key={person.id}>
               <img
                 src={person.image}
-                alt={person.name + ", co-founder of Dino Killers"}
+                alt={person.name + ", " + person.role + " at Dino Killers"}
                 width="600"
                 height="750"
                 loading="lazy"
