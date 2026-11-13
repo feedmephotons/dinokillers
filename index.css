@@ -627,6 +627,30 @@ p {
   inset: 0;
 }
 
+/* ---------- trailer ---------- */
+
+.trailer-frame {
+  position: relative;
+}
+.trailer-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6% -4%;
+  background: linear-gradient(100deg, var(--violet), var(--cyan) 55%, var(--impact));
+  filter: blur(60px);
+  opacity: 0.32;
+}
+.trailer-frame video {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--seam);
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+}
+
 /* ---------- featured projects ---------- */
 
 .feature-grid {

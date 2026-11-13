@@ -160,6 +160,29 @@ export default function HomePage() {
         <Strata flip />
       </section>
 
+      <section className="container section trailer" id="trailer">
+        <div className="section-heading">
+          <h2>Watch the extinction.</h2>
+          <p>
+            Forty seconds on what happens to old software when we show up.
+            Sound on.
+          </p>
+        </div>
+        <div className="trailer-frame">
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster="/video/dk-promo-poster.webp"
+            width="1280"
+            height="720"
+            aria-label="Dino Killers promo video"
+          >
+            <source src="/video/dk-promo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
       <section className="container section" id="work">
         <div className="section-heading">
           <h2>What we built in their place.</h2>
