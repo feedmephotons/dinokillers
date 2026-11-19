@@ -1023,9 +1023,6 @@ p {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
-.operators-photos figure:nth-child(2) {
-  margin-top: 18%;
-}
 .operators-photos img,
 .team-card img {
   width: 100%;
